@@ -22,8 +22,24 @@ jobs:
     - name: Validar mensagens dos commits
       run: |
         mensagens_invalidas=0
+        # Regex para Conventional Commits: type(scope?): subject
+        # O tipo, escopo opcional, '!' opcional, ':' e o assunto são validados.
+        # O assunto deve ter pelo menos um caractere.
+        # A regex é ancorada no início (^) e no fim ($) da linha.
+        conventional_commit_regex='^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\\([^)]+\\))?!?: .{1,}$'
+        
+        # Regex para identificar commits de merge comuns para ignorá-los
+        merge_commit_regex='^Merge[[:space:]]'
+
         while IFS= read -r commit; do
-          if [[ ! $commit =~ "^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\\([^)]+\\))?!?:\ \ " ]]; then
+          # Ignorar commits de merge
+          if [[ $commit =~ $merge_commit_regex ]]; then
+            echo "Ignorando commit de merge: $commit"
+            continue
+          fi
+
+          # Validar Conventional Commits
+          if [[ ! $commit =~ $conventional_commit_regex ]]; then
             echo "Mensagem de commit inválida: $commit"
             mensagens_invalidas=$((mensagens_invalidas + 1))
           fi
