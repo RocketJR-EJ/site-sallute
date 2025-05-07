@@ -1,18 +1,146 @@
 ---
-import astroLogo from '../assets/astro.svg'
-import background from '../assets/background.svg'
+import salutelogo from "../assets/salutelogo.svg";
+import relogioicon from "../assets/relogioicon.svg";
 ---
 
-<header class="bg-gradient-to-r from-red-500 to-pink-500 py-6 shadow-md">
-  <div class="container mx-auto flex items-center justify-center gap-4">
-    <h1 class="text-white text-2xl font-semibold">Exemplo de Header com</h1>
-    <img
-      src={astroLogo.src}
-      width="80"
-      height="40"
-      alt="Astro Logo"
-      class="drop-shadow-lg"
-    />
-    <h1 class="text-white text-2xl font-semibold">+ Tailwind</h1>
-  </div>
+<header class="bg-teal-400 w-full h-22 hidden lg:block">
+  <nav class="container mx-auto flex justify-between items-center h-full px-4">
+    <div class="flex items-center">
+      <img src={salutelogo.src} alt="Salute Logo" class="h-15 mr-2" />
+      <ul class="block">
+        <li class="flex flex-nowrap gap-8 xl:gap-30 font-bold text-white">
+          <a
+            href=""
+            class="whitespace-nowrap hover:text-teal-300 transition-colors duration-300"
+            >Início</a
+          >
+          <a
+            href=""
+            class="whitespace-nowrap hover:text-teal-300 transition-colors duration-300"
+            >Serviços</a
+          >
+          <a
+            href=""
+            class="whitespace-nowrap hover:text-teal-300 transition-colors duration-300"
+            >Corpo Clínico</a
+          >
+          <a
+            href=""
+            class="whitespace-nowrap hover:text-teal-300 transition-colors duration-300"
+            >Institucional</a
+          >
+        </li>
+      </ul>
+    </div>
+    <article class="flex items-center gap-2">
+      <img src={relogioicon.src} alt="Relógio Icone" class="h-5 mr-2" />
+      <div class="flex flex-col items-center">
+        <h1 class="text-xl text-white whitespace-nowrap">
+          Horário de Funcionamento
+        </h1>
+        <p class="text-base font-bold text-white whitespace-nowrap">
+          Segunda a Sábado, das 9h às 18h
+        </p>
+      </div>
+      <div class="w-0.5 h-12 bg-white"></div>
+      <a href="https://www.google.com">
+        <button
+          class="flex w-auto px-4 h-10 items-center justify-center border border-white rounded-xl cursor-pointer hover:bg-white transition-colors duration-300"
+        >
+          <span
+            class="font-bold text-white hover:text-teal-400 transition-colors duration-100 whitespace-nowrap"
+          >
+            Agendar Consulta
+          </span>
+        </button>
+      </a>
+    </article>
+  </nav>
 </header>
+
+<header class="bg-teal-400 w-full lg:hidden">
+  <nav class="container mx-auto flex flex-col px-4 py-3">
+    <div class="flex justify-between items-center">
+      <img src={salutelogo.src} alt="Salute Logo" class="h-15" />
+      <button
+        id="menuToggle"
+        class="text-white focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden py-4">
+      <ul class="flex flex-col gap-4 font-bold text-white">
+        <li>
+          <a
+            href=""
+            class="block py-2 hover:text-teal-300 transition-colors duration-300"
+            >Início</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="block py-2 hover:text-teal-300 transition-colors duration-300"
+            >Serviços</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="block py-2 hover:text-teal-300 transition-colors duration-300"
+            >Corpo Clínico</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="block py-2 hover:text-teal-300 transition-colors duration-300"
+            >Institucional</a
+          >
+        </li>
+      </ul>
+
+      <div class="mt-4">
+        <a href="https://www.google.com">
+          <button
+            class="w-full py-3 border border-white rounded-xl cursor-pointer hover:bg-white transition-colors duration-300"
+          >
+            <span
+              class="font-bold text-white hover:text-teal-400 transition-colors duration-100"
+            >
+              Agendar Consulta
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  });
+</script>
