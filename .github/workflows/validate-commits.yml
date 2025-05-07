@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Baixar o código
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Busca todo o histórico de todos os branches
 
     - name: Obter mensagens dos commits
       run: |
