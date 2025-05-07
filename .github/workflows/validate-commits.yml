@@ -23,7 +23,7 @@ jobs:
       run: |
         mensagens_invalidas=0
         while IFS= read -r commit; do
-          if [[ ! $commit =~ ^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\([^)]+\))?!?:\  ]]; then
+          if [[ ! $commit =~ "^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\\([^)]+\\))?!?:\ \ " ]]; then
             echo "Mensagem de commit inválida: $commit"
             mensagens_invalidas=$((mensagens_invalidas + 1))
           fi
