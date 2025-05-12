@@ -1,0 +1,23 @@
+<article class="flex items-center gap-2">
+      <img src={relogioicon.src} alt="Relógio Icone" class="h-5 mr-2" />
+      <div class="flex flex-col items-center">
+        <h1 class="text-xl text-white whitespace-nowrap">
+          Horário de Funcionamento
+        </h1>
+        <p class="text-base font-bold text-white whitespace-nowrap">
+          Segunda a Sábado, das 9h às 18h
+        </p>
+      </div>
+      <div class="w-0.5 h-12 bg-white"></div>
+      <a href="https://www.google.com">
+        <button
+          class="flex w-auto px-4 h-10 items-center justify-center border border-white rounded-xl cursor-pointer hover:bg-white transition-colors duration-300"
+        >
+          <span
+            class="font-bold text-white hover:text-teal-400 transition-colors duration-100 whitespace-nowrap"
+          >
+            Agendar Consulta
+          </span>
+        </button>
+      </a>
+    </article>
