@@ -1,0 +1,55 @@
+name: Validar Mensagens de Commit
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  validate-commits:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar o código
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Busca todo o histórico de todos os branches
+
+    - name: Obter mensagens dos commits
+      run: |
+        commits=$(git log origin/${{ github.base_ref }}..HEAD --pretty=format:"%s")
+        echo "$commits" > commit_messages.txt
+
+    - name: Validar mensagens dos commits
+      run: |
+        mensagens_invalidas=0
+        # Regex para Conventional Commits: type(scope?): subject
+        # O tipo, escopo opcional, '!' opcional, ':' e o assunto são validados.
+        # O assunto deve ter pelo menos um caractere.
+        # A regex é ancorada no início (^) e no fim ($) da linha.
+        conventional_commit_regex='^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\\([^)]+\\))?!?: .{1,}$'
+        
+        # Regex para identificar commits de merge comuns para ignorá-los
+        merge_commit_regex='^Merge[[:space:]]'
+
+        while IFS= read -r commit; do
+          # Ignorar commits de merge
+          if [[ $commit =~ $merge_commit_regex ]]; then
+            echo "Ignorando commit de merge: $commit"
+            continue
+          fi
+
+          # Validar Conventional Commits
+          if [[ ! $commit =~ $conventional_commit_regex ]]; then
+            echo "Mensagem de commit inválida: $commit"
+            mensagens_invalidas=$((mensagens_invalidas + 1))
+          fi
+        done < commit_messages.txt
+
+        if [ $mensagens_invalidas -ne 0 ]; then
+          echo "❌ Algumas mensagens de commit não seguem o padrão Conventional Commits."
+          exit 1
+        fi
+
+    - name: Mensagem de sucesso
+      if: success()
+      run: echo "✅ Todas as mensagens de commit seguem o padrão Conventional Commits."
