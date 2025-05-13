@@ -1,0 +1,167 @@
+---
+import { Image } from "astro:assets";
+
+import slideImage from "../../assets/ImgsSection1/img1.jpg";
+import slideImage2 from "../../assets/ImgsSection1/img2.jpg";
+import slideImage3 from "../../assets/ImgsSection1/img3.jpg";
+---
+
+<section class="relative w-full overflow-hidden">
+  <div class="swiper main-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <div class="absolute inset-0 w-full h-full">
+            <Image
+              src={slideImage}
+              alt="Main promotional background"
+              width={1920}
+              height={1080}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+
+            <div class="absolute inset-0 bg-opacity-40"></div>
+          </div>
+
+          <div
+            class="relative z-10 container mx-auto px-4 md:px-6 h-full flex items-center"
+          >
+            <div class="max-w-lg text-left hidden lg:block">
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Uma clínica feita para você e sua família.
+              </h2>
+
+              <p class="text-lg text-white mb-8">
+                <span class="font-bold"
+                  >Sallute – Sua parceira de confiança em saúde.</span
+                >
+                <br />
+                Atendimento médico completo com médicos especialistas, tecnologia
+                avançada e atendimento humanizado. Sua saúde, nossa prioridade.
+              </p>
+
+              <a href="#services"
+                ><button
+                  class="cursor-pointer bg-gradient-to-r from-teal-400 to-teal-700 border-0 text-white font-medium py-2 px-8 rounded-4xl transition duration-300"
+                >
+                  Nossos Serviços
+                </button></a
+              >
+              <a href="#contato"
+                ><button
+                  class="cursor-pointer border-1 border-white text-white font-medium py-2 px-8 rounded-4xl transition duration-300"
+                >
+                  Contate-nos
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <div class="absolute inset-0 w-full h-full">
+            <Image
+              src={slideImage2}
+              alt="Second promotional content"
+              width={1920}
+              height={1080}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+            <div class="absolute inset-0 bg-opacity-40"></div>
+          </div>
+
+          <div
+            class="relative z-10 container mx-auto px-4 md:px-6 h-full flex items-center"
+          >
+            <div class="max-w-lg text-left hidden lg:block">
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Um ambiente acolhedor para toda a sua família
+              </h2>
+              <span class="font-bold text-white"
+                >Sallute – Sua parceira de confiança em saúde.</span
+              >
+
+              <p class="text-lg text-white mb-8">
+                Ambientes acolhedores, pensados para proporcionar conforto,
+                bem-estar e uma experiência humanizada em cada detalhe.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <div class="absolute inset-0 w-full h-full">
+            <Image
+              src={slideImage3}
+              alt="Third promotional content"
+              width={1920}
+              height={1080}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+            <div class="absolute inset-0 bg-opacity-40"></div>
+          </div>
+
+          <div
+            class="relative z-10 container mx-auto px-4 md:px-6 h-full flex items-center"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper(".main-swiper", {
+      modules: [Navigation, Pagination, Autoplay],
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>
+
+<style>
+  .main-swiper {
+    width: 100%;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 12px;
+    height: 12px;
+    background: white;
+    opacity: 0.5;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    opacity: 1;
+  }
+</style>
