@@ -21,7 +21,12 @@ const doctors = [
 
 <section class="w-full py-20 #F4F7FF">
   <div class="container mx-auto px-4 max-w-5xl">
-    <p class="text-lg text-center font-bold max-w-3xl mx-auto bg-gradient-to-r from-[#37B5A6] to-[#0B7164] bg-clip-text text-transparent">NOSSOS MÉDICOS</p>
+    <div class="flex justify-center items-center">
+      <div class="flex items-center gap-2">
+        <img src="/Vector.svg" alt="Vector" class="w-4" />
+        <p class="text-lg text-center font-bold max-w-3xl mx-auto bg-gradient-to-r from-[#37B5A6] to-[#0B7164] bg-clip-text text-transparent">NOSSOS MÉDICOS</p>
+      </div>
+    </div>
     <h1 class="text-3xl md:text-5xl font-bold mb-6 text-center">Conheça Nossos Médicos Especialistas</h1>
     <p class="text-sm text-gray-600 mb-6 text-center max-w-lg mx-auto">
       Nossa equipe de médicos especializados se dedica a fornecer atendimento
@@ -49,7 +54,7 @@ const doctors = [
     spaceBetween: 20,
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 2000,
       disableOnInteraction: false,
     },
     breakpoints: {
