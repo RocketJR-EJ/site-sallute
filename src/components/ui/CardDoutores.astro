@@ -1,0 +1,20 @@
+---
+export interface Props {
+  img: string
+  title: string
+  text: string
+}
+const { img, title, text } = Astro.props
+---
+
+<article
+  class="bg-white rounded-lg overflow-hidden w-72 flex flex-col items-center p-4"
+>
+  <img
+    src={img}
+    alt={title}
+    class="w-32 h-32 rounded-full object-cover mb-4"
+  />
+  <h2 class="text-lg font-bold text-gray-800 mb-2 text-center">{title}</h2>
+  <p class="text-base font-bold text-gray-600 text-center">{text}</p> 
+</article>

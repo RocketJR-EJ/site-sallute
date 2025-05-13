@@ -1,0 +1,64 @@
+---
+import CardDoutores from "./ui/CardDoutores.astro"
+import diogo from "../assets/especialistas/Diogo.png"
+import eliane from "../assets/especialistas/Eliane.jpg"
+import victor from "../assets/especialistas/Victor.jpg"
+import suzana from "../assets/especialistas/Suzana.jpg"
+import ricardo from "../assets/especialistas/Ricardo.jpg"
+
+const doctors = [
+  { img: diogo.src, title: "Diogo Bento", text: "Psiquiatra" },
+  { img: eliane.src, title: "Dra. Eliane Calumby", text: "Endrocrinologista" },
+  { img: victor.src, title: "Dr. Victor Hugo", text: "Dermatologista" },
+  { img: suzana.src, title: "Dra. Suzana Cabral", text: "Ginecologista" },
+  { img: ricardo.src, title: "Ricardo Macena", text: "Nutricionista"},
+  { img: eliane.src, title: "Dra. Eliane Calumby", text: "Endrocrinologista" },
+  { img: victor.src, title: "Dr. Victor Hugo", text: "Dermatologista" },
+  { img: suzana.src, title: "Dra. Suzana Cabral", text: "Ginecologista" },
+]
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section class="w-full py-20 #F4F7FF">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <p class="text-lg text-center font-bold max-w-3xl mx-auto bg-gradient-to-r from-[#37B5A6] to-[#0B7164] bg-clip-text text-transparent">NOSSOS MÉDICOS</p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-6 text-center">Conheça Nossos Médicos Especialistas</h1>
+    <p class="text-sm text-gray-600 mb-6 text-center max-w-lg mx-auto">
+      Nossa equipe de médicos especializados se dedica a fornecer atendimento
+      personalizado em uma ampla variedade de áreas médicas.
+    </p>
+  </div>
+  <div class="mt-10">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {doctors.map((doctor) => (
+          <div class="swiper-slide flex justify-center">
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+  new Swiper('.swiper', {
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2.2,
+      },
+      1024: {
+        slidesPerView: 4,
+      }
+    }
+  });
+</script>
