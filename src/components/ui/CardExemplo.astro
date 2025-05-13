@@ -1,0 +1,18 @@
+---
+export interface Props {
+  img: string
+  title: string
+}
+const { img, title } = Astro.props
+---
+
+<article
+  class="bg-white rounded-lg shadow-md overflow-hidden w-72 flex flex-col items-center p-4 hover:shadow-xl transition-shadow"
+>
+  <img
+    src={img}
+    alt={title}
+    class="w-32 h-32 object-cover rounded-full mb-4 border-4 border-pink-200"
+  />
+  <h2 class="text-lg font-bold text-gray-800 mb-2 text-center">{title}</h2>
+</article>
