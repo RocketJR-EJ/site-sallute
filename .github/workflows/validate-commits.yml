@@ -26,7 +26,7 @@ jobs:
         # O tipo, escopo opcional, '!' opcional, ':' e o assunto são validados.
         # O assunto deve ter pelo menos um caractere.
         # A regex é ancorada no início (^) e no fim ($) da linha.
-        conventional_commit_regex='^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\\([^)]+\\))?!?: .{1,}$'
+        conventional_commit_regex='^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\([^)]+\))?!?: .+$'
         
         # Regex para identificar commits de merge comuns para ignorá-los
         merge_commit_regex='^Merge[[:space:]]'
