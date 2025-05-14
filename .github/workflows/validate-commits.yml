@@ -26,15 +26,24 @@ jobs:
         # O tipo, escopo opcional, '!' opcional, ':' e o assunto são validados.
         # O assunto deve ter pelo menos um caractere.
         # A regex é ancorada no início (^) e no fim ($) da linha.
-        conventional_commit_regex='^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\\([^)]+\\))?!?: .{1,}$'
+        conventional_commit_regex='^(feat|fix|docs|chore|style|refactor|test|perf|deploy)(\([^)]+\))?!?: .+$'
         
         # Regex para identificar commits de merge comuns para ignorá-los
         merge_commit_regex='^Merge[[:space:]]'
+
+        # Regex para identificar commits de revert para ignorá-los
+        revert_commit_regex='^Revert[[:space:]]'
 
         while IFS= read -r commit; do
           # Ignorar commits de merge
           if [[ $commit =~ $merge_commit_regex ]]; then
             echo "Ignorando commit de merge: $commit"
+            continue
+          fi
+
+          # Ignorar commits de revert
+          if [[ $commit =~ $revert_commit_regex ]]; then
+            echo "Ignorando commit de revert: $commit"
             continue
           fi
 
