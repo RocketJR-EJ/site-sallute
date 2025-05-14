@@ -1,0 +1,49 @@
+---
+import Button from '../components/ui/Button.astro';
+import Img1 from '../assets/img_clinica1.svg';
+import IconePlus from '../assets/plus.svg'
+---
+
+<section class="flex flex-col items-center justify-center py-10 sm:py-16 gap-12 sm:gap-16">
+
+    <div class="flex flex-col w-full max-w-[360px] sm:max-w-[730px] text-center gap-4 px-6 sm:px-14">
+        
+        <div class="flex justify-center items-center gap-3">
+            <img src={IconePlus.src} alt="" class="w-4 sm:w-5">
+            <p class="text-sm sm:text-lg font-bold tracking-widest bg-gradient-to-r from-[#37B5A6] to-[#0B7164] bg-clip-text text-transparent">
+                NOSSOS AMBIENTES
+            </p>
+        </div>
+
+        <p class="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#031E2D]">
+            Conforto, Segurança e Atendimento Humanizado
+        </p>
+
+        <p class="text-sm sm:text-base lg:text-lg font-normal text-[#131313] opacity-80">
+            A Clínica conta com um ambiente moderno e acolhedor, pensado para oferecer conforto, bem-estar e uma experiência humanizada aos pacientes.
+        </p>
+
+    </div>
+
+    <div class="relative w-full mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12 px-6 sm:px-8 md:px-12 lg:px-20">
+        <img src={Img1.src} alt="Recepção da Clínica" class="rounded-3xl w-full h-auto object-cover" />
+
+        <div class="absolute bottom-0 left-8 right-8 lg:left-15 lg:right-20 xl:right-25 2xl:left-20 2xl:right-30 rounded-b-[32px] px-6 sm:px-10 py-6 sm:py-10 flex items-center gap-4">
+            
+            <h1 class="text-white text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-6xl max-w-2xs sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-3xl 2xl:max-w-4xl font-semibold">
+                Ambiente pensado nos mínimos detalhes para você e sua família!
+            </h1>
+
+            <div class="sm:ml-auto">
+                <Button 
+                  title="Conheça-nos"
+                  href='https://www.instagram.com/sallute.clinica/'
+                  className="text-xs sm:text-sm md:text-base px-4 py-2 sm:px-6 sm:py-3"
+                />
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
