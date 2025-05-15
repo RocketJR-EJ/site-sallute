@@ -7,6 +7,10 @@ import imgDepilacao from "../../assets/backgroundsSection2/img_depilação_a_las
 import imgUltrassom from "../../assets/backgroundsSection2/img_ultrassonografia.avif";
 import imgDermato from "../../assets/backgroundsSection2/img_dermatologista.avif";
 import imgClinico from "../../assets/backgroundsSection2/img_clinica_geral.avif";
+import iconDepilacao from "../../assets/cardsIcons/icon1_services.svg";
+import iconUltrassom from "../../assets/cardsIcons/icon2_services.svg";
+import iconDermato from "../../assets/cardsIcons/icon3_services.svg";
+import iconClinico from "../../assets/cardsIcons/icon4_services.svg";
 ---
 
 <style>
@@ -50,7 +54,7 @@ section {
 
          <CardEspecialidades
             img_background={imgDepilacao.src}
-            img_logo="/src/components/ui/cardsIcons/icon1_services.svg"
+            img_logo={iconDepilacao.src}
             alt="Depilação a Laser"
             title="Depilação a Laser"
             body="Tecnologia de ponta, garantindo segurança, conforto e resultados duradouros para seus pacientes."
@@ -58,7 +62,7 @@ section {
 
          <CardEspecialidades
             img_background={imgUltrassom.src}
-            img_logo="/src/components/ui/cardsIcons/icon2_services.svg"
+            img_logo={iconUltrassom.src}
             alt="Ultrassonografia"
             title="Ultrassonografia"
             body="Atendimento em ultrassonografia, com profissionais qualificados para oferecer diagnósticos confiáveis."
@@ -66,7 +70,7 @@ section {
 
         <CardEspecialidades
             img_background={imgDermato.src}
-            img_logo="/src/components/ui/cardsIcons/icon3_services.svg"
+            img_logo={iconDermato.src}
             alt="Dermatologista"
             title="Dermatologista"
             body="Para tratamento de doenças da pele, unhas e cabelos, além de cuidados estéticos especializados."
@@ -74,7 +78,7 @@ section {
 
         <CardEspecialidades
             img_background={imgClinico.src}
-            img_logo="/src/components/ui/cardsIcons/icon4_services.svg"
+            img_logo={iconClinico.src}
             alt="Clínico Geral"
             title="Clínico Geral"
             body="Avaliação médica, diagnóstico, orientação de tratamentos e encaminhamento para especialistas."
