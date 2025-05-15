@@ -1,5 +1,24 @@
 ---
-import Section_2 from '../components/section_2.astro';
+import Header from '../components/Header.astro'
+import SectionExemplo from '../components/SectionExemplo.astro'
+import Layout from '../layouts/Layout.astro'
+import CardExemplo from '../components/ui/CardExemplo.astro'
+import astroLogo from '../assets/astro.svg'
+import QuintaSection from '../components/QuintaSection.astro'
+import Section2 from '../components/Section2/section_2.astro'
 
 ---
 
+<Layout>
+	<Header />
+	<main class="flex flex-col items-center gap-8 py-10">
+		<SectionExemplo />
+		<section class="flex flex-wrap justify-center gap-8 mt-10">
+			<CardExemplo img={astroLogo.src} title="Astro Framework" />
+			<CardExemplo img="https://placehold.co/128x128" title="Outro Card" />
+		</section>
+	</main>
+    <Section2 />
+	<QuintaSection />
+
+</Layout>

@@ -1,0 +1,46 @@
+---
+interface Props {
+    img_background: string;
+    img_logo: string;
+    alt: string;
+    title: string;
+    body: string;
+}
+
+const {img_background, img_logo, alt, title, body} = Astro.props;
+---
+
+<div class="relative flex flex-col w-[310px] h-[278px] sm:w-[416px] sm:h-[360px] justify-center rounded-3xl bg-[#A2CFCA] shadow-[4px_4px_4px_#AEAEAE] px-8 gap-6 sm:px-2.5 text-white overflow-hidden"
+style="box-shadow:
+    4px 4px 8px 0 rgba(25, 90, 255, 0.15),
+    0px 0px 8px 0 #AEAEAE,
+    inset -4px -4px 8px 0 rgba(23, 23, 23, 0.12);">
+
+
+    <div 
+        class="absolute inset-0"
+        style={`background-image: url('${img_background}'); background-size: cover; background-position: center; opacity: 0.1; z-index: 0;`}
+    ></div>
+
+
+    <div class="relative z-10 flex flex-col sm:p-12 gap-6">
+        <div class="flex items-center justify-center bg-white rounded-[99px] w-[70px] h-[70px] sm:w-[80px] sm:h-[80px]">
+            <img 
+                src={img_logo}
+                alt={alt}
+            >
+        </div>
+
+        <div class="flex flex-col w-[250px] md:w-[288px] h-[120px] text-[#00281C] gap-4">
+            <h2 class="text-[20px] sm:text-2xl/[32px] font-medium">
+                {title}
+            </h2>
+        
+            <p class="text-[14px] sm:text-base/[24px] font-normal opacity-70">
+                {body}
+            </p>
+        </div>
+    </div>
+</div>
+
+
