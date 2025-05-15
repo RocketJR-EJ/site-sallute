@@ -1,0 +1,101 @@
+---
+import CardDoutores from "./ui/CardDoutores.astro"
+
+import diogo from "../assets/especialistas/Diogo.png"
+import eliane from "../assets/especialistas/Eliane.jpg"
+import victor from "../assets/especialistas/Victor.jpg"
+import ricardo from "../assets/especialistas/Ricardo_nutri.jpg"
+import cicero from "../assets/especialistas/Cicero_ultrassonografista.png"
+import eduardo from "../assets/especialistas/Eduardo_urologista.png"
+import elfrida from "../assets/especialistas/Elfrida_neuropsi.png"
+import fabian from "../assets/especialistas/Fabian_cardio.png"
+import irwins from "../assets/especialistas/Irwins_urologista.png"
+import jandira from "../assets/especialistas/Jandira_fono.png"
+import jose from "../assets/especialistas/Jose_mastologia.png"
+import juarez from "../assets/especialistas/Juarez_fisioterapeuta.png"
+import julia from "../assets/especialistas/Julia_gineco.png"
+import juliana from "../assets/especialistas/Juliana_fisio.png"
+import lilian from "../assets/especialistas/Lilian_alergista.png"
+import ricardo_neuro from "../assets/especialistas/Ricardo_neuro.png"
+import solange from "../assets/especialistas/Solange_clinica.png"
+import suzane from "../assets/especialistas/Suzane_gineco.png"
+import thaysa from "../assets/especialistas/Thaysa_pneumologia.png"
+import ubirajara from "../assets/especialistas/Ubirajara_ultrassonografista.png"
+import victoria from "../assets/especialistas/Victoria_nutri.png"
+
+import Cruz from "../assets/plus.svg"
+
+const doctors = [
+  { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento" },
+  { img: eliane.src, title: "Endocrinologista", text: "Dra. Eliane Calumby" },
+  { img: victor.src, title: "Dermatologista", text: "Dr. Victor Hugo" },
+  { img: ricardo.src, title: "Nutricionista", text: "Ricardo Macena"},
+  { img: cicero.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida" },
+  { img: eduardo.src, title: "Urologista", text: "Dr. Eduardo Nunes" },
+  { img: elfrida.src, title: "Neuropsicóloga", text: "Dra. Elfrida Gregório" },
+  { img: fabian.src, title: "Cardiologista", text: "Dr. Fabian Touret" },
+  { img: irwins.src, title: "Urologista", text: "Dr. Irwins Souza" },
+  { img: jandira.src, title: "Fonoaudióloga", text: "Dra. Jandira Maia" },
+  { img: jose.src, title: "Mastologista", text: "Dr. José Venâncio" },
+  { img: juarez.src, title: "Fisioterapeuta", text: "Dr. Juaréz Alexandre" },
+  { img: julia.src, title: "Ginecologista", text: "Dra. Júlia Tenório" },
+  { img: juliana.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes" },
+  { img: lilian.src, title: "Alergista", text: "Dra. Lilian Maria" },
+  { img: ricardo_neuro.src, title: "Neurologista", text: "Dr. Ricardo Tenório" },
+  { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão" },
+  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral" },
+  { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque" },
+  { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos" },
+  { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros" }
+]
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section class="w-full py-20 bg-[#F4F7FF]">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="flex justify-center items-center">
+      <div class="flex items-center gap-2">
+        <img src={Cruz.src} alt="Vector" class="w-4" />
+        <p class="text-lg text-center font-bold max-w-3xl mx-auto bg-gradient-to-r from-[#37B5A6] to-[#0B7164] bg-clip-text text-transparent">CORPO CLÍNICO</p>
+      </div>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-inter font-semibold mb-6 text-center text-[#031E2D]">Conheça Nosso Corpo Clínico</h1>
+    <p class="text-xs sm:text-sm lg:text-base text-gray-600 font-inter mb-6 text-center max-w-lg mx-auto">
+      Nossa equipe de médicos especializados se dedica a fornecer atendimento
+      personalizado em uma ampla variedade de áreas médicas.
+    </p>
+  </div>
+  <div class="mt-10">
+    <div class="swiper ">
+      <div class="swiper-wrapper ">
+        {doctors.map((doctor) => (
+          <div class="swiper-slide flex justify-center">
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+  new Swiper('.swiper', {
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2.2,
+      },
+      1024: {
+        slidesPerView: 4,
+      }
+    }
+  });
+</script>
