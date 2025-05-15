@@ -2,17 +2,17 @@
 import { Image } from "astro:assets";
 import LogoSallute from "../assets/logo-sallute.svg";
 ---
+
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-    </style>
-    
-    <footer class="flex flex-col justify-between bg-gradient-to-br from-teal-600 to-teal-700 text-white px-6 py-10">
-      
-      <article>
-      <div class="flex flex-col md:flex-row justify-around">
-        
-        <!-- Coluna esquerda: Imagem Sallute e Slogan -->
-        <div class="text-center md:text-left mb-8 md:mb-0">
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+</style>
+
+<footer
+  class="flex flex-col justify-between bg-gradient-to-br from-teal-600 to-teal-700 text-white px-6 py-10"
+>
+  <article>
+    <div class="flex flex-col md:flex-row justify-around">
+      <div class="text-center md:text-left mb-8 md:mb-0">
         <Image
           src={LogoSallute}
           alt="Logo Sallute"
@@ -21,76 +21,132 @@ import LogoSallute from "../assets/logo-sallute.svg";
           height={94}
         />
         <div>
-            <p class="text-lg font-medium">Sua saúde é a nossa prioridade<br>cuidando de você e de quem você ama.</p>
-            <p class="mt-4 text-sm">Entre em contato agora e agende sua consulta!</p>
-          </div>
-    
-          <!-- Ícones das redes sociais, para acompanhar o "entre em contato(...)" na responsividade -->
-          <div class="flex space-x-4 mt-6">
-            <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-              <img src="/src/assets/socialbuttons/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
-            </a>
-            <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-              <img src="/src/assets/socialbuttons/instagram.svg" alt="Instagram" class="w-6 h-6">
-            </a>
-            <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-              <img src="/src/assets/socialbuttons/facebook.svg" alt="Facebook" class="w-6 h-6">
-            </a>
-            <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-              <img src="/src/assets/socialbuttons/telefone.svg" alt="Telefone" class="w-6 h-6">
-            </a>
-          </div>
+          <p class="text-lg font-medium">
+            Sua saúde é a nossa prioridade<br />cuidando de você e de quem você
+            ama.
+          </p>
+          <p class="mt-4 text-sm">
+            Entre em contato agora e agende sua consulta!
+          </p>
         </div>
-        <!-- Coluna Centro: Lista Empresa -->
+
+        <div class="flex space-x-4 mt-6">
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
+            <img
+              src="/src/assets/socialbuttons/whatsapp.svg"
+              alt="WhatsApp"
+              class="w-6 h-6"
+            />
+          </a>
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
+            <img
+              src="/src/assets/socialbuttons/instagram.svg"
+              alt="Instagram"
+              class="w-6 h-6"
+            />
+          </a>
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
+            <img
+              src="/src/assets/socialbuttons/facebook.svg"
+              alt="Facebook"
+              class="w-6 h-6"
+            />
+          </a>
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
+            <img
+              src="/src/assets/socialbuttons/telefone.svg"
+              alt="Telefone"
+              class="w-6 h-6"
+            />
+          </a>
+        </div>
+      </div>
+
       <main class="flex flex-col md:flex-row gap-6 md:gap-10">
         <div class="text-left">
-          <h4 class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40">Institucional</h4>
+          <h4
+            class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40"
+          >
+            Institucional
+          </h4>
           <ul class="space-y-2 text-sm">
             <li><a href="#" class="hover:underline">Sobre Nós</a></li>
             <li><a href="#" class="hover:underline">Nossos Valores</a></li>
-            <li><a href="#" class="hover:underline">Política de Privacidade</a></li>
+            <li>
+              <a href="#" class="hover:underline">Política de Privacidade</a>
+            </li>
             <li><a href="#" class="hover:underline">Termos de Uso</a></li>
           </ul>
         </div>
-    <div class="text-left">
-      <h4 class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40">Empresa</h4>
-      <ul class="space-y-2 text-sm">
-      <li><a href="#" class="hover:underline">Quem Somos</a></li>
-      <li><a href="#" class="hover:underline">Nossa Estrutura</a></li>
-      <li><a href="#" class="hover:underline">Trabalhe Conosco</a></li>
-      <li><a href="#" class="hover:underline">SAC</a></li>
-      </ul>
-    </div>
-    <!-- Coluna Direita: Lista Servicos -->
-    <div class="text-left">
-     <h4 class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40">Serviços</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:underline">Exames Laboratoriais</a></li>
-        <li><a href="#" class="hover:underline">Checkups</a></li>
-        <li><a href="#" class="hover:underline">Depilação a Laser</a></li>
-        <li><a href="#" class="hover:underline">Psicólogo</a></li>
-      </ul>
-    </div>
-  </div>
-  </main>
-  <!-- Endereço -->
-  <div class="max-w-7xl mx-auto mt-6 text-sm text-white text-right">
-    <p>
-      <span class="text-white"> 📍 Endereço: Rua Eng. Joaquim Gonçalves, nº 200, Santa Luzia,</span><br>
-      <span class="text-white">Penedo/AL - em frente à Codevasf - CNPJ 24.080.965/0001-08.</span>
-    </p>
-  </div>
+        <div class="text-left">
+          <h4
+            class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40"
+          >
+            Empresa
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:underline">Quem Somos</a></li>
+            <li><a href="#" class="hover:underline">Nossa Estrutura</a></li>
+            <li><a href="#" class="hover:underline">Trabalhe Conosco</a></li>
+            <li><a href="#" class="hover:underline">SAC</a></li>
+          </ul>
+        </div>
 
-  <div class="border-t border-[#FAFAFA] my-6"></div>
+        <div class="text-left">
+          <h4
+            class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40"
+          >
+            Serviços
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#" class="hover:underline">Exames Laboratoriais</a>
+            </li>
+            <li><a href="#" class="hover:underline">Checkups</a></li>
+            <li><a href="#" class="hover:underline">Depilação a Laser</a></li>
+            <li><a href="#" class="hover:underline">Psicólogo</a></li>
+          </ul>
+        </div>
+      </main>
+    </div>
 
-  <!-- Direitos Autorais e Desenvolvedor -->
-<div class="flex flex-col md:flex-row justify-between md:justify-around gap-4 text-center md:text-left">
-  <div class="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-2">
-    <span>Desenvolvido por:</span>
-    <a href="https://rocketjr.com.br" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-      <img src="src/assets/logo-rocket.svg" alt="Rocket JR" class="h-[40px] md:h-[50px] w-auto">
-    </a>
-  </div>
-  <p class="mt-2 md:mt-0 text-sm md:text-base">2025 © <strong>Sallute Clínica Médica Penedo</strong> - Todos os direitos reservados.</p>
-</div>
-    </article>
+    <div class="max-w-7xl mx-auto mt-6 text-sm text-white text-right">
+      <p>
+        <span class="text-white">
+          📍 Endereço: Rua Eng. Joaquim Gonçalves, nº 200, Santa Luzia,</span
+        ><br />
+        <span class="text-white"
+          >Penedo/AL - em frente à Codevasf - CNPJ 24.080.965/0001-08.</span
+        >
+      </p>
+    </div>
+
+    <div class="border-t border-[#FAFAFA] my-6"></div>
+
+    <div
+      class="flex flex-col md:flex-row justify-between md:justify-around gap-4 text-center md:text-left"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-2"
+      >
+        <span>Desenvolvido por:</span>
+        <a
+          href="https://rocketjr.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:opacity-80 transition-opacity"
+        >
+          <img
+            src="/src/assets/logo-rocket.svg"
+            alt="Rocket JR"
+            class="h-[40px] md:h-[50px] w-auto"
+          />
+        </a>
+      </div>
+      <p class="mt-2 md:mt-0 text-sm md:text-base">
+        2025 © <strong>Sallute Clínica Médica Penedo</strong> - Todos os direitos
+        reservados.
+      </p>
+    </div>
+  </article>
+</footer>
