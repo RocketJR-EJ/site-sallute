@@ -1,0 +1,25 @@
+---
+import Map from "./ui/Map.astro"; 
+---
+
+<section class="flex flex-col items-center w-full py-10 sm:py-16 bg-white">
+    <div class="flex flex-col w-full max-w-[360px] sm:max-w-[730px] text-center gap-2 px-6 sm:px-14">
+        
+        <div class="flex justify-center items-center gap-3">
+            <img src="src/assets/plus.svg" alt="Ícone de mais" class="w-3 sm:w-4">
+            <p class="text-xs sm:text-base font-inter font-bold tracking-widest bg-gradient-to-r from-[#37B5A6] to-[#0B7164] bg-clip-text text-transparent">
+                NOSSA LOCALIZAÇÃO
+            </p>
+        </div>
+
+        <p class="text-xl sm:text-2xl lg:text-4xl font-inter font-semibold text-[#031E2D]">
+            Fácil e Rápido de Chegar
+        </p>
+
+        <p class="text-xs sm:text-sm lg:text-base font-inter font-normal text-[#131313] opacity-80 mb-2">
+            Localização estratégica para que você chegue com tranquilidade e sem complicações.
+        </p>
+
+    </div>
+    <Map /> 
+</section>
