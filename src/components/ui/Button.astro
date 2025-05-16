@@ -1,23 +1,25 @@
 ---
-export interface Props {
+export interface ButtonProps {
   title: string;
   href?: string;
   className?: string;
 }
 
 const { title, href, className = '' } = Astro.props;
+
+const baseClasses = 'block w-fit rounded-full bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-sm sm:text-base text-white px-4 py-2 sm:px-6 sm:py-3 hover:brightness-110 transition';
 ---
 
 {href ? (
   <a
     href={href}
-    class={`block w-fit rounded-full bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-sm sm:text-base text-white px-4 py-2 sm:px-6 sm:py-3 hover:brightness-110 transition ${className}`}
+    class={`${baseClasses} ${className}`}
   >
     {title}
   </a>
 ) : (
   <button
-    class={`block w-fit rounded-full bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-sm sm:text-base text-white px-4 py-2 sm:px-6 sm:py-3 hover:brightness-110 transition ${className}`}
+    class={`${baseClasses} ${className}`}
   >
     {title}
   </button>
