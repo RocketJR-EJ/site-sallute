@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro'
 import SectionExemplo from '../components/SectionExemplo.astro'
+import Footer from '../components/Footer.astro'
 import Layout from '../layouts/Layout.astro'
 import CardExemplo from '../components/ui/CardExemplo.astro'
 import astroLogo from '../assets/astro.svg'
@@ -18,7 +19,9 @@ import Section2 from '../components/Section2/index.astro'
 			<CardExemplo img="https://placehold.co/128x128" title="Outro Card" />
 		</section>
 	</main>
-    <Section2 />
+  <Section2 />
 	<QuintaSection />
-
+  <footer>
+		<Footer />
+	</footer>
 </Layout>
