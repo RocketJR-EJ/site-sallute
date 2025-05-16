@@ -3,16 +3,19 @@ import HeaderSalute from '../components/Header/index.astro'
 import Section1 from '../components/Section1/index.astro'
 import Section4 from '../components/Section4/index.astro'
 import SectionExemplo from '../components/SectionExemplo.astro'
+import Footer from '../components/Footer.astro'
 import Layout from '../layouts/Layout.astro'
 import CardExemplo from '../components/ui/CardExemplo.astro'
 import astroLogo from '../assets/astro.svg'
+import QuintaSection from '../components/QuintaSection.astro'
+import Section3 from '../components/Section3.astro'
+import Section2 from '../components/Section2/index.astro'
 ---
 
 <Layout>
 	
 	<HeaderSalute />
 	<Section1 />
-	
 	<main class="flex flex-col items-center gap-8 py-10">
 		<SectionExemplo />
 		<section class="flex flex-wrap justify-center gap-8 mt-10">
@@ -20,7 +23,11 @@ import astroLogo from '../assets/astro.svg'
 			<CardExemplo img="https://placehold.co/128x128" title="Outro Card" />
 		</section>
 	</main>
-
+  <Section2 />
+  <Section3 />
 	<Section4 />
-
+	<QuintaSection />
+  <footer>
+		<Footer />
+	</footer>
 </Layout>
