@@ -4,164 +4,190 @@ import { Image } from "astro:assets";
 import slideImage from "../../assets/ImgsSection1/img1.jpg";
 import slideImage2 from "../../assets/ImgsSection1/img2.jpg";
 import slideImage3 from "../../assets/ImgsSection1/img3.jpg";
+import imagemcta from "../../assets/ImgsSection1/imagemcta.svg";
+import "keen-slider/keen-slider.min.css";
 ---
 
 <section class="relative w-full overflow-hidden">
-  <div class="swiper main-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
-          <div class="absolute inset-0 w-full h-full">
-            <Image
-              src={slideImage}
-              alt="Main promotional background"
-              width={1920}
-              height={1080}
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
+  <div
+    id="my-keen-slider"
+    class="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[900px]"
+  >
+    <div
+      class="fader__slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out"
+    >
+      <Image
+        src={slideImage}
+        alt="Slide 1"
+        class="w-full h-full object-cover object-center"
+        loading={"eager"}
+      />
 
-            <div class="absolute inset-0 bg-opacity-40"></div>
-          </div>
-
-          <div
-            class="relative z-10 container mx-auto px-4 md:px-6 h-full flex items-center"
-          >
-            <div class="max-w-lg text-left hidden lg:block">
-              <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Uma clínica feita para você e sua família.
-              </h2>
-
-              <p class="text-lg text-white mb-8">
-                <span class="font-bold"
-                  >Sallute – Sua parceira de confiança em saúde.</span
-                >
-                <br />
-                Atendimento médico completo com médicos especialistas, tecnologia
-                avançada e atendimento humanizado. Sua saúde, nossa prioridade.
-              </p>
-
-              <a href="#services"
-                ><button
-                  class="cursor-pointer bg-gradient-to-r from-teal-400 to-teal-700 border-0 text-white font-medium py-2 px-8 rounded-4xl transition duration-300"
-                >
-                  Nossos Serviços
-                </button></a
-              >
-              <a href="#contato"
-                ><button
-                  class="cursor-pointer border-1 border-white text-white font-medium py-2 px-8 rounded-4xl transition duration-300"
-                >
-                  Contate-nos
-                </button></a
-              >
-            </div>
-          </div>
-        </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+      >
       </div>
-
-      <div class="swiper-slide">
-        <div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
-          <div class="absolute inset-0 w-full h-full">
-            <Image
-              src={slideImage2}
-              alt="Second promotional content"
-              width={1920}
-              height={1080}
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div class="absolute inset-0 bg-opacity-40"></div>
-          </div>
-
-          <div
-            class="relative z-10 container mx-auto px-4 md:px-6 h-full flex items-center"
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24"
+      >
+        <Image
+          src={imagemcta}
+          width={600}
+          height={100}
+          alt="Logo CTA"
+          class="hidden lg:block w-[600px] mb-8"
+          loading={"eager"}
+        />
+        <h2
+          class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl"
+        >
+          Sallute – Sua parceira de confiança em saúde.
+        </h2>
+        <p
+          class="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8"
+        >
+          Atendimento médico completo com médicos especialistas, tecnologia
+          avançada e atendimento humanizado.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto">
+          <a
+            href="#contato"
+            class="bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-white text-sm sm:text-base font-bold py-2 px-6 sm:px-8 rounded-3xl transition-colors"
           >
-            <div class="max-w-lg text-left hidden lg:block">
-              <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Um ambiente acolhedor para toda a sua família
-              </h2>
-              <span class="font-bold text-white"
-                >Sallute – Sua parceira de confiança em saúde.</span
-              >
-
-              <p class="text-lg text-white mb-8">
-                Ambientes acolhedores, pensados para proporcionar conforto,
-                bem-estar e uma experiência humanizada em cada detalhe.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
-          <div class="absolute inset-0 w-full h-full">
-            <Image
-              src={slideImage3}
-              alt="Third promotional content"
-              width={1920}
-              height={1080}
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div class="absolute inset-0 bg-opacity-40"></div>
-          </div>
-
-          <div
-            class="relative z-10 container mx-auto px-4 md:px-6 h-full flex items-center"
+            Agende uma Consulta
+          </a>
+          <a
+            href="#servicos"
+            class="hidden sm:block border border-white text-white text-sm sm:text-base font-bold py-2 px-4 rounded-3xl hover:bg-white hover:text-[#0B7164] transition-colors"
           >
-          </div>
+            Nossos Serviços
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="swiper-pagination"></div>
+    <div
+      class="fader__slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out"
+    >
+      <Image
+        src={slideImage2}
+        alt="Slide 2"
+        class="w-full h-full object-cover object-center"
+        loading={"eager"}
+      />
+
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+      >
+      </div>
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24"
+      >
+        <h2
+          class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl"
+        >
+          Um ambiente acolhedor para toda a sua família
+        </h2>
+        <p
+          class="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8"
+        >
+          Ambientes acolhedores, pensados para proporcionar conforto, bem-estar
+          e uma experiência humanizada em cada detalhe.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="fader__slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out"
+    >
+      <Image
+        src={slideImage3}
+        alt="Slide 3"
+        class="w-full h-full object-cover object-center"
+        loading={"eager"}
+      />
+
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+      >
+      </div>
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24"
+      >
+        <h2
+          class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl"
+        >
+          Tecnologia e inovação a serviço da sua saúde
+        </h2>
+        <p
+          class="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8"
+        >
+          Equipamentos modernos e profissionais qualificados para cuidar do que
+          mais importa: você.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
+<style>
+  .fader__slide {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .fader__slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
 <script>
-  import Swiper from "swiper";
-  import { Navigation, Pagination, Autoplay } from "swiper/modules";
-  import "swiper/css";
-  import "swiper/css/navigation";
-  import "swiper/css/pagination";
+  import KeenSlider from "keen-slider";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const swiper = new Swiper(".main-swiper", {
-      modules: [Navigation, Pagination, Autoplay],
-      slidesPerView: 1,
-      spaceBetween: 0,
+    const slides = document.querySelectorAll(".fader__slide");
+
+    if (slides.length > 0) {
+      slides[0].classList.add("active");
+    }
+
+    const slider = new KeenSlider("#my-keen-slider", {
       loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+      slides: slides.length,
+    });
+
+    slider.on("slideChanged", (instance) => {
+      const currentSlide = instance.track.details.rel;
+
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.add("active");
+        } else {
+          slide.classList.remove("active");
+        }
+      });
+    });
+
+    let interval;
+
+    const startAutoPlay = () => {
+      interval = setInterval(() => {
+        slider.next();
+      }, 15000);
+    };
+
+    startAutoPlay();
+
+    slider.on("dragStarted", () => clearInterval(interval));
+    slider.on("dragEnded", () => startAutoPlay());
+
+    window.addEventListener("resize", () => {
+      setTimeout(() => {
+        slider.update();
+      }, 300);
     });
   });
 </script>
 
-<style>
-  .main-swiper {
-    width: 100%;
-  }
-
-  :global(.swiper-pagination-bullet) {
-    width: 12px;
-    height: 12px;
-    background: white;
-    opacity: 0.5;
-  }
-
-  :global(.swiper-pagination-bullet-active) {
-    opacity: 1;
-  }
-</style>
