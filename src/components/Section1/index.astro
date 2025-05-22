@@ -170,18 +170,11 @@ import "keen-slider/keen-slider.min.css";
       });
     });
 
-    let interval;
-
-    const startAutoPlay = () => {
-      interval = setInterval(() => {
-        slider.next();
-      }, 15000);
-    };
-
-    startAutoPlay();
+    const interval = setInterval(() => {
+      slider.next();
+    }, 15000);
 
     slider.on("dragStarted", () => clearInterval(interval));
-    slider.on("dragEnded", () => startAutoPlay());
 
     window.addEventListener("resize", () => {
       setTimeout(() => {
