@@ -4,10 +4,9 @@ import salutelogo from "../../assets/salutelogo.svg";
 import relogioicon from "../../assets/relogioicon.svg";
 ---
 
-<header class="bg-teal-400 w-full fixed top-0 left-0 z-50">
-  <div class="container mx-auto flex flex-col lg:flex-row relative">
-    <nav class="flex items-center justify-between p-4 w-full">
-      <a href="/" class="flex items-center">
+<header class="fixed top-0 left-0 bg-teal-400 w-full z-50">
+    <nav class="flex items-center justify-between p-4 w-full ">
+      <a href="#section1" class="flex items-center">
         <Image
           src={salutelogo}
           alt="Salute Logo"
@@ -15,7 +14,6 @@ import relogioicon from "../../assets/relogioicon.svg";
           width={140}
           height={100}
           loading="eager"
-          fetchpriority="high"
         />
       </a>
       <div class="flex items-center gap-10">
@@ -23,15 +21,17 @@ import relogioicon from "../../assets/relogioicon.svg";
           class="hidden lg:flex items-center gap-8 xl:gap-30 text-white font-medium"
         >
           <li>
-            <a href="/" class="hover:text-gray-200 transition-colors">Início</a>
+            <a href="#section1" class="hover:text-gray-200 transition-colors"
+              >Início</a
+            >
           </li>
           <li>
-            <a href="/sobre" class="hover:text-gray-200 transition-colors"
+            <a href="#section2" class="hover:text-gray-200 transition-colors"
               >Serviços</a
             >
           </li>
           <li>
-            <a href="/contato" class="hover:text-gray-200 transition-colors"
+            <a href="#section3" class="hover:text-gray-200 transition-colors"
               >Corpo Clínico</a
             >
           </li>
@@ -85,41 +85,16 @@ import relogioicon from "../../assets/relogioicon.svg";
         </div>
       </article>
     </nav>
-  </div>
 
   <div
     id="mobile-menu"
     class="hidden lg:hidden bg-teal-400 pb-4 px-4 shadow-lg"
   >
     <ul class="space-y-3 text-white">
-      <li>
-        <a
-          href="/"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Início</a
-        >
-      </li>
-      <li>
-        <a
-          href="/sobre"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Serviços</a
-        >
-      </li>
-      <li>
-        <a
-          href="/contato"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Corpo Clínico</a
-        >
-      </li>
-      <li>
-        <a
-          href="/servicos"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Quem Somos?</a
-        >
-      </li>
+      <li><a href="#section1" class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors">Início</a></li>
+      <li><a href="#section2" class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors">Serviços</a></li>
+      <li><a href="#section3" class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors">Corpo Clínico</a></li>
+      <li><a href="/servicos" class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors">Quem Somos?</a></li>
     </ul>
 
     <div class="flex items-center gap-2 mt-4">
@@ -150,8 +125,26 @@ import relogioicon from "../../assets/relogioicon.svg";
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener("click", () => {
+    mobileMenuButton.addEventListener("click", (e) => {
       mobileMenu.classList.toggle("hidden");
+      e.stopPropagation();
+    });
+
+    const menuItems = mobileMenu.querySelectorAll("a");
+    menuItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      if (!mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+
+    mobileMenu.addEventListener("click", (e) => {
+      e.stopPropagation();
     });
   }
 </script>
