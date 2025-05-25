@@ -1,75 +1,72 @@
 ---
 import { Image } from "astro:assets";
-import LogoSallute from "../assets/logo-sallute.svg";
+import Iconfacebook from "../assets/socialbuttons/facebook.svg";
+import Iconwhatsapp from "../assets/socialbuttons/whatsapp.svg";
+import Iconinstagram from "../assets/socialbuttons/instagram.svg";
+import Icontelefone from "../assets/socialbuttons/telefone.svg";
+import Iconemail from "../assets/socialbuttons/email.svg";
+import Iconrocket from "../assets/logo-rocket.svg";
+import Frase2 from "../assets/Frase2.svg";
+import LogoSalluteBranco from "../assets/salluteLogoBranco.svg";
 ---
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 </style>
 
-<footer
-  class="flex flex-col justify-between bg-gradient-to-br from-teal-600 to-teal-700 text-white px-6 py-10"
->
-  <article>
-    <div class="flex flex-col md:flex-row justify-around">
-      <div class="text-center md:text-left mb-8 md:mb-0">
-        <Image
-          src={LogoSallute}
-          alt="Logo Sallute"
-          class="mx-auto md:mx-0"
-          width={240}
-          height={94}
-        />
-        <div>
-          <p class="text-lg font-medium">
-            Sua saúde é a nossa prioridade<br />cuidando de você e de quem você
-            ama.
-          </p>
-          <p class="mt-4 text-sm">
+<footer class="bg-gradient-to-br from-teal-600 to-teal-700 text-white py-6">
+  <article class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between gap-4">
+      <div class="flex flex-col md:w-1/3">
+        <div class="text-center md:text-left mb-4 md:mb-1">
+          <Image
+            src={LogoSalluteBranco}
+            alt="Logo Sallute"
+            class="mx-auto md:mx-0"
+            width={200}
+            height={80}
+          />
+          <Image
+            src={Frase2}
+            alt="Logo Sallute"
+            class="mx-auto md:mx-0"
+            width={300}
+            height={80}
+          />
+
+          <p class="mt-2 text-base">
             Entre em contato agora e agende sua consulta!
           </p>
         </div>
 
-        <div class="flex space-x-4 mt-6">
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-            <img
-              src="/src/assets/socialbuttons/whatsapp.svg"
-              alt="WhatsApp"
-              class="w-6 h-6"
-            />
+        <div class="flex space-x-3 mt-2 justify-center md:justify-start">
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+            <img src={Iconwhatsapp.src} alt="WhatsApp" class="w-5 h-5" />
           </a>
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-            <img
-              src="/src/assets/socialbuttons/instagram.svg"
-              alt="Instagram"
-              class="w-6 h-6"
-            />
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+            <img src={Iconinstagram.src} alt="Instagram" class="w-5 h-5" />
           </a>
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-            <img
-              src="/src/assets/socialbuttons/facebook.svg"
-              alt="Facebook"
-              class="w-6 h-6"
-            />
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+            <img src={Iconfacebook.src} alt="Facebook" class="w-5 h-5" />
           </a>
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-3 rounded-full">
-            <img
-              src="/src/assets/socialbuttons/telefone.svg"
-              alt="Telefone"
-              class="w-6 h-6"
-            />
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+            <img src={Icontelefone.src} alt="Telefone" class="w-5 h-5" />
+          </a>
+          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+            <img src={Iconemail.src} alt="Email" class="w-5 h-5" />
           </a>
         </div>
       </div>
-
-      <main class="flex flex-col md:flex-row gap-6 md:gap-10">
+      <div
+        class="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 md:mt-0 md:w-2/3 md:justify-end"
+      >
         <div class="text-left">
           <h4
-            class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40"
+            class="text-[20px] font-semibold mb-1 border-b border-[#FAFAFA] pb-1 w-36"
           >
             Institucional
           </h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-0.5 text-base text-[#FAFAFA]">
             <li><a href="#" class="hover:underline">Sobre Nós</a></li>
             <li><a href="#" class="hover:underline">Nossos Valores</a></li>
             <li>
@@ -80,25 +77,26 @@ import LogoSallute from "../assets/logo-sallute.svg";
         </div>
         <div class="text-left">
           <h4
-            class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40"
+            class="text-[20px] font-semibold mb-1 border-b border-[#FAFAFA] pb-1 w-36"
           >
             Empresa
           </h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-0.5 text-base text-[#FAFAFA]">
             <li><a href="#" class="hover:underline">Quem Somos</a></li>
             <li><a href="#" class="hover:underline">Nossa Estrutura</a></li>
             <li><a href="#" class="hover:underline">Trabalhe Conosco</a></li>
-            <li><a href="#" class="hover:underline">SAC</a></li>
+            <li>
+              <a href="#" class="hover:underline">SAC - 82 9 9993-0051</a>
+            </li>
           </ul>
         </div>
-
         <div class="text-left">
           <h4
-            class="text-lg font-semibold mb-4 border-b border-[#FAFAFA] pb-2 w-40"
+            class="text-[20px] font-semibold mb-1 border-b border-[#FAFAFA] pb-1 w-36"
           >
             Serviços
           </h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-0.5 text-base text-[#FAFAFA]">
             <li>
               <a href="#" class="hover:underline">Exames Laboratoriais</a>
             </li>
@@ -107,29 +105,25 @@ import LogoSallute from "../assets/logo-sallute.svg";
             <li><a href="#" class="hover:underline">Psicólogo</a></li>
           </ul>
         </div>
-      </main>
+      </div>
     </div>
 
-    <div class="max-w-7xl mx-auto mt-6 text-sm text-white text-right">
-      <p>
-        <span class="text-white">
-          📍 Endereço: Rua Eng. Joaquim Gonçalves, nº 200, Santa Luzia,</span
-        ><br />
-        <span class="text-white"
-          >Penedo/AL - em frente à Codevasf - CNPJ 24.080.965/0001-08.</span
-        >
+    <div class="mt-4 text-white text-center md:text-right">
+      <p class="text-sm sm:text-base leading-relaxed">
+        📍 Endereço: Rua Eng. Joaquim Gonçalves, nº 200, Santa Luzia,<br />
+        Penedo/AL - em frente à Codevasf - CNPJ 24.080.965/0001-08.
       </p>
     </div>
 
-    <div class="border-t border-[#FAFAFA] my-6"></div>
+    <div class="border-t border-[#FAFAFA] my-3"></div>
 
     <div
-      class="flex flex-col md:flex-row justify-between md:justify-around gap-4 text-center md:text-left"
+      class="flex flex-col md:flex-row justify-between gap-2 text-center md:text-left"
     >
       <div
-        class="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-2"
+        class="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-1 md:space-y-0 md:space-x-2"
       >
-        <span>Desenvolvido por:</span>
+        <span class="text-[17px]">Desenvolvido por:</span>
         <a
           href="https://rocketjr.com.br"
           target="_blank"
@@ -137,13 +131,13 @@ import LogoSallute from "../assets/logo-sallute.svg";
           class="hover:opacity-80 transition-opacity"
         >
           <img
-            src="/src/assets/logo-rocket.svg"
+            src={Iconrocket.src}
             alt="Rocket JR"
-            class="h-[40px] md:h-[50px] w-auto"
+            class="h-[25px] md:h-[35px] w-auto"
           />
         </a>
       </div>
-      <p class="mt-2 md:mt-0 text-sm md:text-base">
+      <p class="mt-1 md:mt-0 text-[17px]">
         2025 © <strong>Sallute Clínica Médica Penedo</strong> - Todos os direitos
         reservados.
       </p>
