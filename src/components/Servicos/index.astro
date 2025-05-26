@@ -1,84 +1,140 @@
 ---
 import DescriptionSection from '../../components/ui/DescriptionSection.astro';
 import IconePlus from '../../assets/plus.svg'
+
+import CardDoutores from '../../components/ui/CardDoutores.astro'
+import Ultrassonografista_1 from '../../assets/especialistas/Cicero_ultrassonografista.png'
+import Ultrassonografista_2 from '../../assets/especialistas/Ubirajara_ultrassonografista.png'
+
+import Fisioterapeuta_1 from '../../assets/especialistas/Juarez_fisioterapeuta.png'
+import Fisioterapeuta_2 from '../../assets/especialistas/Juliana_fisio.png'
+
+const ultrassom = [
+    { img: Ultrassonografista_1.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida"},
+    {img: Ultrassonografista_2.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos"}
+];
+
+const fisio = [
+    { img: Fisioterapeuta_1.src, title: "Fisioterapeuta", text: "Dr. Juarez Alexandre"},
+    {img: Fisioterapeuta_2.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes"}
+];
 ---
 
-<section class="flex flex-col items-center justify-center py-10 sm:py-16 gap-6 max-w-7xl mx-auto px-6 sm:px-7 lg:px-8 mt-18">
-    <DescriptionSection 
+<section class="flex flex-col items-center justify-center py-8 sm:py-10 md:py-14 lg:py-16 gap-6 max-w-7xl mx-auto px-3 sm:px-5 md:px-8 lg:px-8 mt-10">
+  <DescriptionSection 
     img={IconePlus.src}
     label='NOSSOS SERVIÇOS'
     title='Conheça os Serviços da Sallute Clínica Médica'
-    />
-    <div class="flex flex-col gap-2 md:gap-3 lg:gap-5 px-2 lg:px-6">
-
-        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-15 lg:mt-25 mb-4 w-full text-left">
-            Ultrassonografia</h2>
-        <p class="text-justify text-gray-700 leading-relaxed text-base sm:text-lg lg:text-2xl w-full">
-            Diversos serviços de ultrassonografia com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.</p>
-        <ul class="list-disc pl-5 space-y-1 text-gray-700 text-justify leading-relaxed text-base sm:text-lg lg:text-2xl w-full mb-4">
-            <li>ABDOME TOTAL;               </li>
-            <li>ABDOME SUPERIOR;            </li>
-            <li>PAREDE ABDOMINAL;           </li>
-            <li>HIPOCÔNDRIO DIREITO;        </li>
-            <li>VIAS URINÁRIAS;             </li>
-            <li>PRÓSTATA;                   </li>
-            <li>TIREÓIDE;                   </li>
-            <li>TIREÓIDE DOPPLER;           </li>
-            <li>GESTAÇÃO;                   </li>
-            <li>GESTAÇÃO GEMELAR;           </li>
-            <li>PÉLVICA;                    </li>
-            <li>PÉLVICA + ENDOVAGINAL;      </li>
-            <li>ENDOVAGINAL;                </li>
-            <li>MAMAS + AXILAS;             </li>
-            <li>BOLSA ESCROTAL (TESTÍCULOS);</li>
-            <li>BOLSA ESCROTAL DOPPLER;     </li>
-            <li>REGIAO INGUINAL;            </li>
-            <li>ARTICULAÇÃO OMBRO;          </li>
-            <li>ARTICULAÇÃO PUNHO;          </li>
-            <li>ARTICULAÇÃO COTOVELO;       </li>
-            <li>MÃO;                        </li>
-            <li>ARTICULAÇÃO JOELHO;         </li>
-            <li>ARTICULAÇÃO TORNOZELO;      </li>
-            <li>QUADRIL;                    </li>
-            <li>PÉ.                         </li>
+  />
+  <!-- Seção de serviços da clínica médica -->
+  <div class="flex flex-col gap-8 md:gap-10 lg:gap-12 w-full">
+    <!-- Ultrassonografia -->
+    <div class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white rounded-2xl shadow-sm p-4 sm:p-6">
+      <!-- Texto à esquerda -->   
+      <div class="flex-1 min-w-0">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
+          Ultrassonografia
+        </h2>
+        <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+          Diversos serviços de ultrassonografia com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.
+        </p>
+        <ul class="list-disc pl-4 space-y-1 text-gray-700 text-justify leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+          <li>ABDOME TOTAL;</li>
+          <li>ABDOME SUPERIOR;</li>
+          <li>PAREDE ABDOMINAL;</li>
+          <li>HIPOCÔNDRIO DIREITO;</li>
+          <li>VIAS URINÁRIAS;</li>
+          <li>PRÓSTATA;</li>
+          <li>TIREÓIDE;</li>
+          <li>TIREÓIDE DOPPLER;</li>
+          <li>GESTAÇÃO;</li>
+          <li>GESTAÇÃO GEMELAR;</li>
+          <li>PÉLVICA;</li>
+          <li>PÉLVICA + ENDOVAGINAL;</li>
+          <li>ENDOVAGINAL;</li>
+          <li>MAMAS + AXILAS;</li>
+          <li>BOLSA ESCROTAL (TESTÍCULOS);</li>
+          <li>BOLSA ESCROTAL DOPPLER;</li>
+          <li>REGIAO INGUINAL;</li>
+          <li>ARTICULAÇÃO OMBRO;</li>
+          <li>ARTICULAÇÃO PUNHO;</li>
+          <li>ARTICULAÇÃO COTOVELO;</li>
+          <li>MÃO;</li>
+          <li>ARTICULAÇÃO JOELHO;</li>
+          <li>ARTICULAÇÃO TORNOZELO;</li>
+          <li>QUADRIL;</li>
+          <li>PÉ.</li>
         </ul>
-
-
-        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-15 lg:mt-25 mb-4 w-full text-left">
-            Exames em Geral</h2>
-        <p class="text-justify text-gray-700 leading-relaxed text-base sm:text-lg lg:text-2xl w-full">
-            Diversos serviços de ultrassonografia com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.</p>
-        <ul class="list-disc pl-5 space-y-1 text-gray-700 text-justify leading-relaxed text-base sm:text-lg lg:text-2xl w-full mb-4">
-            <li>Inserir servicos;               </li>
-        </ul>
-
-                        
-        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-15 lg:mt-25 mb-4 w-full text-left">
-            Depilação a Laser</h2>
-        <p class="text-justify text-gray-700 leading-relaxed text-base sm:text-lg lg:text-2xl w-full">
-            Diversos serviços de ultrassonografia com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.</p>
-        <ul class="list-disc pl-5 space-y-1 text-gray-700 text-justify leading-relaxed text-base sm:text-lg lg:text-2xl w-full mb-4">
-            <li>AXILAS;                     </li>
-            <li>BUÇO;                       </li>
-            <li>QUEIXO;                     </li> 
-            <li>FACE COMPLETA;              </li>
-            <li>CONTORNO DE BARBA;          </li>
-            <li>LINHA ALBA;                 </li>
-            <li>MEIA LINHA ALBA;            </li>
-            <li>DECOTE VIRILHA;             </li>
-            <li>VIRILHA COMPLETA + PERIANAL;</li>
-            <li>GLUTEO;                     </li>
-            <li>COXA;                       </li>
-            <li>CANELA;                     </li>
-            <li>INTERNO DE COXA;            </li>
-            <li>PERNA COMPLETA;             </li>
-            <li>BRAÇO OU ANTEBRAÇO;         </li>
-            <li>ORELHAS;                    </li>
-            <li>MAOS + DEDOS;               </li>
-            <li>PES + DEDOS;                </li>
-            <li>REGIÃO LOMBAR;              </li>
-            <li>PEITORAL + AB;              </li>
-            <li>COSTAS.                     </li>
-        </ul>
+      </div>
+      <!-- Fotos à direita -->
+      <div class="flex flex-col items-center gap-2 mt-6 md:mt-0 w-full lg:w-auto lg:ml-6">
+        <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
+        <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
+          {ultrassom.map((doctor) => (
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+          ))}
+        </div>
+      </div>
     </div>
-</section>  
+    <!-- Fisioterapia -->
+    <div class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white rounded-2xl shadow-sm p-4 sm:p-6">
+      <div class="flex-1 min-w-0">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
+          Fisioterapia
+        </h2>
+        <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+          Diversos serviços de fisioterapia com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.
+        </p>
+        <ul class="list-disc pl-4 space-y-1 text-gray-700 text-justify leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+          <li>FISIOTERAPIA ORTOPÉDICA;</li>
+          <li>FISIOTERAPIA NEUROLÓGICA;</li>
+          <li>FISIOTERAPIA CARDIORESPIRATÓRIA;</li>
+          <li>FISIOTERAPIA PEDIÁTRICA;</li>
+          <li>FISIOTERAPIA GERIÁTRICA;</li>
+          <li>FISIOTERAPIA DESPORTIVA;</li>
+          <li>FISIOTERAPIA PÉLVICA;</li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-center gap-2 mt-6 md:mt-0 w-full lg:w-auto lg:ml-6">
+        <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
+        <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
+          {fisio.map((doctor) => (
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+          ))}
+        </div>
+      </div>
+    </div>
+    <!-- Depilação a Laser -->
+    <div class="bg-white rounded-2xl shadow-sm p-4 sm:p-6">
+      <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
+        Depilação a Laser
+      </h2>
+      <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+        Diversos serviços de depilação a laser com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.
+      </p>
+      <ul class="list-disc pl-4 space-y-1 text-gray-700 text-justify leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+        <li>AXILAS;</li>
+        <li>BUÇO;</li>
+        <li>QUEIXO;</li>
+        <li>FACE COMPLETA;</li>
+        <li>CONTORNO DE BARBA;</li>
+        <li>LINHA ALBA;</li>
+        <li>MEIA LINHA ALBA;</li>
+        <li>DECOTE VIRILHA;</li>
+        <li>VIRILHA COMPLETA + PERIANAL;</li>
+        <li>GLUTEO;</li>
+        <li>COXA;</li>
+        <li>CANELA;</li>
+        <li>INTERNO DE COXA;</li>
+        <li>PERNA COMPLETA;</li>
+        <li>BRAÇO OU ANTEBRAÇO;</li>
+        <li>ORELHAS;</li>
+        <li>MAOS + DEDOS;</li>
+        <li>PES + DEDOS;</li>
+        <li>REGIÃO LOMBAR;</li>
+        <li>PEITORAL + AB;</li>
+        <li>COSTAS.</li>
+      </ul>
+    </div>
+  </div>
+</section>
