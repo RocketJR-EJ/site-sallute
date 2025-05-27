@@ -9,10 +9,12 @@ import Ultrassonografista_2 from '../../assets/especialistas/Ubirajara_ultrasson
 import Fisioterapeuta_1 from '../../assets/especialistas/Juarez_fisioterapeuta.png'
 
 import LaserDepilacao from '../../assets/especialistas/Juliana_fisio.png'
+import { object } from 'astro:schema';
 
 const ultrassom = [
-    { img: Ultrassonografista_1.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida"},
-    {img: Ultrassonografista_2.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos"}
+  {img: Ultrassonografista_2.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true },  
+  { img: Ultrassonografista_1.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida"}
+    
 ];
 
 const fisio = [
