@@ -7,7 +7,8 @@ import Ultrassonografista_1 from '../../assets/especialistas/Cicero_ultrassonogr
 import Ultrassonografista_2 from '../../assets/especialistas/Ubirajara_ultrassonografista.png'
 
 import Fisioterapeuta_1 from '../../assets/especialistas/Juarez_fisioterapeuta.png'
-import Fisioterapeuta_2 from '../../assets/especialistas/Juliana_fisio.png'
+
+import LaserDepilacao from '../../assets/especialistas/Juliana_fisio.png'
 
 const ultrassom = [
     { img: Ultrassonografista_1.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida"},
@@ -15,8 +16,11 @@ const ultrassom = [
 ];
 
 const fisio = [
-    { img: Fisioterapeuta_1.src, title: "Fisioterapeuta", text: "Dr. Juarez Alexandre"},
-    {img: Fisioterapeuta_2.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes"}
+    { img: Fisioterapeuta_1.src, title: "Fisioterapeuta", text: "Dr. Juarez Alexandre"}
+];
+
+const laser = [
+    { img: LaserDepilacao.src, title: "Fisioterapeuta", text: "Dra. Juliana Oliveira"}
 ];
 ---
 
@@ -29,14 +33,14 @@ const fisio = [
   <!-- Seção de serviços da clínica médica -->
   <div class="flex flex-col gap-8 md:gap-10 lg:gap-12 w-full">
     <!-- Ultrassonografia -->
-    <div class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white rounded-2xl shadow-sm p-4 sm:p-6">
+    <div class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white p-4 sm:p-6">
       <!-- Texto à esquerda -->   
       <div id="ultrassonografia" class="flex-1 min-w-0">
         <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
           Ultrassonografia
         </h2>
         <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
-          Diversos serviços de ultrassonografia com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.
+          O serviço de ultrassonografia é realizado em um ambiente acolhedor, pensado para que você se sinta tranquilo e seguro durante todo o exame. Nossa equipe prioriza o atendimento humanizado, respeitando suas necessidades e garantindo atenção individualizada.
         </p>
         <ul class="list-disc pl-4 space-y-1 text-gray-700 text-justify leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
           <li>ABDOME TOTAL;</li>
@@ -71,28 +75,27 @@ const fisio = [
         <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
         <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
           {ultrassom.map((doctor) => (
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} background="#fff" />
           ))}
         </div>
       </div>
     </div>
     <!-- Fisioterapia -->
-    <div id="fisioterapia" class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white rounded-2xl shadow-sm p-4 sm:p-6">
+    <div id="fisioterapia" class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white p-4 sm:p-6">
       <div class="flex-1 min-w-0">
         <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
           Fisioterapia
         </h2>
         <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
-          Diversos serviços de fisioterapia com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.
+          Fisioterapia é uma área da saúde que atua na prevenção, diagnóstico e tratamento de disfunções do movimento e das funções do corpo. Seu objetivo é promover qualidade de vida, aliviar dores e restaurar a funcionalidade por meio de técnicas terapêuticas, exercícios e orientações.
         </p>
         <ul class="list-disc pl-4 space-y-1 text-gray-700 text-justify leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
           <li>FISIOTERAPIA ORTOPÉDICA;</li>
+          <li>FISIOTERAPIA TRAUMATOLÓGICA;</li>
+          <li>FISIOTERAPIA ESPORTIVA;</li>
           <li>FISIOTERAPIA NEUROLÓGICA;</li>
-          <li>FISIOTERAPIA CARDIORESPIRATÓRIA;</li>
-          <li>FISIOTERAPIA PEDIÁTRICA;</li>
+          <li>FISIOTERAPIA RESPIRATÓRIA;</li>
           <li>FISIOTERAPIA GERIÁTRICA;</li>
-          <li>FISIOTERAPIA DESPORTIVA;</li>
-          <li>FISIOTERAPIA PÉLVICA;</li>
         </ul>
       </div>
       <div class="flex flex-col items-center gap-2 mt-6 md:mt-0 w-full lg:w-auto lg:ml-6">
@@ -105,36 +108,45 @@ const fisio = [
       </div>
     </div>
     <!-- Depilação a Laser -->
-    <div id="depilacao" class="bg-white rounded-2xl shadow-sm p-4 sm:p-6">
-      <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
-        Depilação a Laser
-      </h2>
-      <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
-        Diversos serviços de depilação a laser com tecnologia de ponta, equipe especializada e um atendimento humanizado, garantindo diagnósticos precisos e cuidado integral com a sua saúde.
-      </p>
-      <ul class="list-disc pl-4 space-y-1 text-gray-700 text-justify leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
-        <li>AXILAS;</li>
-        <li>BUÇO;</li>
-        <li>QUEIXO;</li>
-        <li>FACE COMPLETA;</li>
-        <li>CONTORNO DE BARBA;</li>
-        <li>LINHA ALBA;</li>
-        <li>MEIA LINHA ALBA;</li>
-        <li>DECOTE VIRILHA;</li>
-        <li>VIRILHA COMPLETA + PERIANAL;</li>
-        <li>GLUTEO;</li>
-        <li>COXA;</li>
-        <li>CANELA;</li>
-        <li>INTERNO DE COXA;</li>
-        <li>PERNA COMPLETA;</li>
-        <li>BRAÇO OU ANTEBRAÇO;</li>
-        <li>ORELHAS;</li>
-        <li>MAOS + DEDOS;</li>
-        <li>PES + DEDOS;</li>
-        <li>REGIÃO LOMBAR;</li>
-        <li>PEITORAL + AB;</li>
-        <li>COSTAS.</li>
-      </ul>
-    </div>
-  </div>
+    <div id="depilacao" class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white p-4 sm:p-6">
+      <div class="flex-1 min-w-0">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
+          Depilação a Laser
+        </h2>
+        <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+          A depilação a laser é um procedimento moderno, seguro e eficaz para a redução duradoura dos pelos indesejados. Utilizando tecnologia de ponta, como o Laser Light , o tratamento é indicado para todos os tipos de pele clara e morena, proporcionando resultados visíveis desde as primeiras sessões.
+        </p>
+        <ul class="list-disc pl-4 space-y-1 text-gray-700 text-justify leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
+          <li>AXILAS;</li>
+          <li>BUÇO;</li>
+          <li>QUEIXO;</li>
+          <li>FACE COMPLETA;</li>
+          <li>CONTORNO DE BARBA;</li>
+          <li>LINHA ALBA;</li>
+          <li>MEIA LINHA ALBA;</li>
+          <li>DECOTE VIRILHA;</li>
+          <li>VIRILHA COMPLETA + PERIANAL;</li>
+          <li>GLUTEO;</li>
+          <li>COXA;</li>
+          <li>CANELA;</li>
+          <li>INTERNO DE COXA;</li>
+          <li>PERNA COMPLETA;</li>
+          <li>BRAÇO OU ANTEBRAÇO;</li>
+          <li>ORELHAS;</li>
+          <li>MAOS + DEDOS;</li>
+          <li>PES + DEDOS;</li>
+          <li>REGIÃO LOMBAR;</li>
+          <li>PEITORAL + AB;</li>
+          <li>COSTAS.</li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-center gap-2 mt-6 md:mt-0 w-full lg:w-auto lg:ml-6">
+        <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
+        <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
+          {laser.map((doctor) => (
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+          ))}
+        </div>
+      </div>
+  </div>  
 </section>

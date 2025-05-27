@@ -4,12 +4,13 @@ export interface Props {
   title: string
   text: string
   objectTop?: boolean
+  background?: string
 }
-const { img, title, text, objectTop } = Astro.props
+const { img, title, text, objectTop, background = '#fff' } = Astro.props
 ---
 
 <article
-  class="bg-[#F4F7FF] rounded-lg overflow-hidden w-72 flex flex-col items-center p-4"
+  class="rounded-lg overflow-hidden w-72 flex flex-col items-center p-4"
 >
   <img
     src={img}
