@@ -1,10 +1,10 @@
 ---
 import CardDoutores from "./ui/CardDoutores.astro"
 
-import diogo from "../assets/especialistas/Diogo.png"
-import eliane from "../assets/especialistas/Eliane.jpg"
-import victor from "../assets/especialistas/Victor.jpg"
-import ricardo from "../assets/especialistas/Ricardo_nutri.jpg"
+import diogo from "../assets/especialistas/Diogo-Bento.png"
+import eliane from "../assets/especialistas/Eliane-Calumby.jpg"
+import victor from "../assets/especialistas/Victor-Hugo.png"
+import ricardo from "../assets/especialistas/Ricardo-Macena.jpg"
 import cicero from "../assets/especialistas/Cicero_ultrassonografista.png"
 import eduardo from "../assets/especialistas/Eduardo_urologista.png"
 import elfrida from "../assets/especialistas/Elfrida_neuropsi.png"
@@ -22,31 +22,35 @@ import suzane from "../assets/especialistas/Suzane_gineco.png"
 import thaysa from "../assets/especialistas/Thaysa_pneumologia.png"
 import ubirajara from "../assets/especialistas/Ubirajara_ultrassonografista.png"
 import victoria from "../assets/especialistas/Victoria_nutri.png"
+import daise from "../assets/especialistas/Daise_Nicacio.png"
+import larissa from "../assets/especialistas/Larissa_Tenorio.jpeg"
 
 import Cruz from "../assets/plus.svg"
 
 const doctors = [
-  { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento" },
-  { img: eliane.src, title: "Endocrinologista", text: "Dra. Eliane Calumby" },
+  { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento", objectTop: true },
+  { img: eliane.src, title: "Endocrinologista", text: "Dra. Eliane Calumby", objectTop: true },
   { img: victor.src, title: "Dermatologista", text: "Dr. Victor Hugo" },
-  { img: ricardo.src, title: "Nutricionista", text: "Ricardo Macena"},
+  { img: ricardo.src, title: "Nutricionista", text: "Ricardo Macena", objectTop: true},
   { img: cicero.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida" },
   { img: eduardo.src, title: "Urologista", text: "Dr. Eduardo Nunes" },
   { img: elfrida.src, title: "Neuropsicóloga", text: "Dra. Elfrida Gregório" },
-  { img: fabian.src, title: "Cardiologista", text: "Dr. Fabian Touret" },
+  { img: fabian.src, title: "Cardiologista", text: "Dr. Fabian Touret", objectTop: true },
   { img: irwins.src, title: "Urologista", text: "Dr. Irwins Souza" },
   { img: jandira.src, title: "Fonoaudióloga", text: "Dra. Jandira Maia" },
-  { img: jose.src, title: "Mastologista", text: "Dr. José Venâncio" },
+  { img: jose.src, title: "Mastologista", text: "Dr. José Venâncio", objectTop: true },
   { img: juarez.src, title: "Fisioterapeuta", text: "Dr. Juaréz Alexandre" },
   { img: julia.src, title: "Ginecologista", text: "Dra. Júlia Tenório" },
   { img: juliana.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes" },
   { img: lilian.src, title: "Alergista", text: "Dra. Lilian Maria" },
   { img: ricardo_neuro.src, title: "Neurologista", text: "Dr. Ricardo Tenório" },
-  { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão" },
-  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral" },
-  { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque" },
-  { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos" },
-  { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros" }
+  { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão", objectTop: true },
+  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral", },
+  { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque", objectTop: true },
+  { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true },
+  { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros", objectTop: true },
+  { img: daise.src, title: "Otorrino", text: "Dra. Daise Nicacio", objectTop: true },
+    { img: larissa.src, title: "Otorrinolaringologista", text: "Dra. Larissa Tenório", objectTop: true },
 ]
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -66,11 +70,11 @@ const doctors = [
     </p>
   </div>
   <div class="mt-10">
-    <div class="swiper ">
-      <div class="swiper-wrapper ">
+    <div class="swiper">
+      <div class="swiper-wrapper px-10 lg:px-15">
         {doctors.map((doctor) => (
-          <div class="swiper-slide flex justify-center">
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+          <div class="swiper-slide flex justify-center ">
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} objectTop={doctor.objectTop} />
           </div>
         ))}
       </div>
@@ -81,18 +85,15 @@ const doctors = [
 <script type="module" is:inline>
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
   new Swiper('.swiper', {
-    slidesPerView: 1.2,
-    centeredSlides: true,
-    spaceBetween: 20,
-    loop: true,
+    slidesPerView: 2,
+    centeredSlides: false,
+    spaceBetween: 10,
+    loop: false,
     autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
+      delay: 2000, 
+      disableOnInteraction: false
     },
     breakpoints: {
-      640: {
-        slidesPerView: 2.2,
-      },
       1024: {
         slidesPerView: 4,
       }
