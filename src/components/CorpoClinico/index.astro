@@ -1,0 +1,75 @@
+---
+import CardDoutores from "../ui/CardDoutores.astro"
+
+import diogo from "../../assets/especialistas/Diogo-Bento.png"
+import eliane from "../../assets/especialistas/Eliane-Calumby.jpg"
+import victor from "../../assets/especialistas/Victor-Hugo.png"
+import ricardo from "../../assets/especialistas/Ricardo-Macena.jpg"
+import cicero from "../../assets/especialistas/Cicero_ultrassonografista.png"
+import eduardo from "../../assets/especialistas/Eduardo_urologista.png"
+import elfrida from "../../assets/especialistas/Elfrida_neuropsi.png"
+import fabian from "../../assets/especialistas/Fabian_cardio.png"
+import irwins from "../../assets/especialistas/Irwins_urologista.png"
+import jandira from "../../assets/especialistas/Jandira_fono.png"
+import jose from "../../assets/especialistas/Jose_mastologia.png"
+import juarez from "../../assets/especialistas/Juarez_fisioterapeuta.png"
+import julia from "../../assets/especialistas/Julia_gineco.png"
+import juliana from "../../assets/especialistas/Juliana_fisio.png"
+import lilian from "../../assets/especialistas/Lilian_alergista.png"
+import ricardo_neuro from "../../assets/especialistas/Ricardo_neuro.png"
+import solange from "../../assets/especialistas/Solange_clinica.png"
+import suzane from "../../assets/especialistas/Suzane_gineco_edit.png"
+import thaysa from "../../assets/especialistas/Thaysa_pneumologia.png"
+import ubirajara from "../../assets/especialistas/Ubirajara_ultrassonografista.png"
+import victoria from "../../assets/especialistas/Victoria_nutri.png"
+import daise from "../../assets/especialistas/Daise_Nicacio.png"
+import larissa from "../../assets/especialistas/Larissa_Tenorio.jpeg"
+import DescriptionSection from "../ui/DescriptionSection.astro"
+import IconePlus from '../../assets/plus.svg'
+
+
+const doctors = [
+  { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento", objectTop: true },
+  { img: eliane.src, title: "Endocrinologista", text: "Dra. Eliane Calumby", objectTop: true },
+  { img: victor.src, title: "Dermatologista", text: "Dr. Victor Hugo" },
+  { img: ricardo.src, title: "Nutricionista", text: "Ricardo Macena", objectTop: true},
+  { img: cicero.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida" },
+  { img: eduardo.src, title: "Urologista", text: "Dr. Eduardo Nunes" },
+  { img: elfrida.src, title: "Neuropsicóloga", text: "Dra. Elfrida Gregório" },
+  { img: fabian.src, title: "Cardiologista", text: "Dr. Fabian Touret", objectTop: true },
+  { img: irwins.src, title: "Urologista", text: "Dr. Irwins Souza" },
+  { img: jandira.src, title: "Fonoaudióloga", text: "Dra. Jandira Maia" },
+  { img: jose.src, title: "Mastologista", text: "Dr. José Venâncio", objectTop: true },
+  { img: juarez.src, title: "Fisioterapeuta", text: "Dr. Juaréz Alexandre" },
+  { img: julia.src, title: "Ginecologista", text: "Dra. Júlia Tenório" },
+  { img: juliana.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes" },
+  { img: lilian.src, title: "Alergista", text: "Dra. Lilian Maria" },
+  { img: ricardo_neuro.src, title: "Neurologista", text: "Dr. Ricardo Tenório" },
+  { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão", objectTop: true },
+  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral", objectTop: true},
+  { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque", objectTop: true },
+  { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true },
+  { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros", objectTop: true },
+  { img: daise.src, title: "Otorrinolaringologista", text: "Dra. Daise Nicacio", objectTop: true },
+  { img: larissa.src, title: "Otorrinolaringologista", text: "Dra. Larissa Tenório", objectTop: true },
+]
+---
+
+<section class="flex flex-col items-center justify-center py-30 bg-[#F4F7FF]">
+    
+    <DescriptionSection 
+        img={IconePlus.src}
+        label='NOSSOS AMBIENTES'
+        title='Conforto, Segurança e Atendimento Humanizado'
+        description='A Clínica conta com um ambiente moderno e acolhedor, pensado para oferecer conforto, bem-estar e uma experiência humanizada aos pacientes.'
+        />
+    <div class="mt-10">
+      <div class="flex flex-wrap justify-center gap-4">
+        {doctors.map((doctor) => (
+          <div class="w-1/2 md:w-1/3 lg:w-1/6 flex justify-center">
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} objectTop={doctor.objectTop} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
