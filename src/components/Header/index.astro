@@ -1,157 +1,172 @@
 ---
 import { Image } from "astro:assets";
-import salutelogo from "../../assets/salutelogo.svg";
+import salutelogo from "../../assets/salluteLogoBranco.svg";
 import relogioicon from "../../assets/relogioicon.svg";
 ---
 
-<header class="bg-teal-400 w-full fixed top-0 left-0 z-50">
-  <div class="container mx-auto flex flex-col lg:flex-row relative">
-    <nav class="flex items-center justify-between p-4 w-full">
-      <a href="/" class="flex items-center">
-        <Image
-          src={salutelogo}
-          alt="Salute Logo"
-          class="h-10 lg:h-12"
-          width={140}
-          height={100}
-          loading="eager"
-          fetchpriority="high"
-        />
-      </a>
-      <div class="flex items-center gap-10">
-        <ul
-          class="hidden lg:flex items-center gap-8 xl:gap-30 text-white font-medium"
-        >
-          <li>
-            <a href="/" class="hover:text-gray-200 transition-colors">Início</a>
-          </li>
-          <li>
-            <a href="/sobre" class="hover:text-gray-200 transition-colors"
-              >Serviços</a
-            >
-          </li>
-          <li>
-            <a href="/contato" class="hover:text-gray-200 transition-colors"
-              >Corpo Clínico</a
-            >
-          </li>
-          <li>
-            <a href="/servicos" class="hover:text-gray-200 transition-colors"
-              >Quem Somos?</a
-            >
-          </li>
-        </ul>
-      </div>
+<header class="bg-[#3ABDAD] text-white py-4 px-6 fixed top-0 left-0 right-0 z-50">
+  <nav class="flex items-center justify-between max-w-7xl mx-auto">
 
-      <button id="mobile-menu-button" class="lg:hidden text-white z-10">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-        </svg>
-      </button>
-
-      <article class="hidden lg:flex items-center gap-4">
-        <div class="hidden lg:flex items-center gap-3">
-          <Image
-            src={relogioicon}
-            alt="Horário"
-            class="w-6 h-6"
-            width={24}
-            height={24}
-            loading="eager"
-          />
-          <div class="text-white">
-            <p class="font-medium text-sm">Horário de Funcionamento</p>
-            <p class="font-medium text-sm">Seg a Sáb, 7h30 às 18h</p>
-          </div>
-        </div>
-        <div class="w-[0.5px] h-10 bg-white mx-2"></div>
-        <div class="hidden lg:block">
-          <a
-            href="/agendar"
-            class="align-center text-center border border-white text-white hover:bg-teal-50 hover:text-teal-400 transition-colors px-4 py-1.5 rounded-xl font-medium"
-          >
-            Agendar Consulta
-          </a>
-        </div>
-      </article>
-    </nav>
-  </div>
-
-  <div
-    id="mobile-menu"
-    class="hidden lg:hidden bg-teal-400 pb-4 px-4 shadow-lg"
-  >
-    <ul class="space-y-3 text-white">
-      <li>
-        <a
-          href="/"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Início</a
-        >
-      </li>
-      <li>
-        <a
-          href="/sobre"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Serviços</a
-        >
-      </li>
-      <li>
-        <a
-          href="/contato"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Corpo Clínico</a
-        >
-      </li>
-      <li>
-        <a
-          href="/servicos"
-          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
-          >Quem Somos?</a
-        >
-      </li>
-    </ul>
-
-    <div class="flex items-center gap-2 mt-4">
-      <Image
-        src={relogioicon}
-        alt="Horário"
-        class="w-5 h-5"
-        width={20}
-        height={20}
+    <div class="flex-shrink-0">
+      <Image 
+        src={salutelogo} 
+        alt="Sallute Logo"
+        width={120}
+        height={60}
+        class="object-contain"
       />
-      <p class="text-white text-sm">Horário de Funcionamento</p>
-      <p class="text-white text-sm">Seg a Sáb, 7h30 às 18h</p>
     </div>
 
-    <div class="mt-4">
-      <a
-        href="/agendar"
-        class="block w-full bg-white text-teal-500 hover:bg-teal-50 text-center transition-colors py-2 rounded-lg font-medium"
-      >
+    <button 
+      id="menu-toggle" 
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
+      aria-label="Menu"
+      aria-expanded="false"
+    >
+      <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
+      <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
+      <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
+    </button>
+
+
+    <ul class="hidden md:flex space-x-8 font-medium">
+      <li><a href="#" class="hover:text-teal-900 transition-colors">Início</a></li>
+      <li><a href="#" class="hover:text-teal-900 transition-colors">Quem Somos</a></li>
+      <li><a href="#" class="hover:text-teal-900 transition-colors">Serviços</a></li>
+      <li><a href="#" class="hover:text-teal-900 transition-colors">Corpo Clínico</a></li>
+    </ul>
+  
+    <div class="hidden lg:flex items-center space-x-3">
+      <Image 
+        src={relogioicon} 
+        alt="Ícone de Relógio"
+        width={24}
+        height={24}
+      />
+      <div class="flex flex-col text-sm">
+        <span class="font-semibold">Horário de Funcionamento</span>
+        <span>Segunda a Sábado, das 07:30h às 18h</span>
+      </div>
+    </div>
+    
+    <a href="#" class="hidden md:block ml-4">
+      <button class="border border-white hover:bg-teal-600 transition-colors text-white font-medium py-1 px-5 rounded-3xl">
         Agendar Consulta
-      </a>
+      </button>
+    </a>
+  </nav>
+
+ 
+  <div id="mobile-menu" class="md:hidden bg-[#3ABDAD] shadow-lg absolute left-0 right-0 top-[76px] overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+    <div class="px-6 py-4">
+      <ul class="flex flex-col space-y-3">
+        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Início</a></li>
+        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Quem Somos</a></li>
+        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Serviços</a></li>
+        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Corpo Clínico</a></li>
+      </ul>
+      
+      <div class="mt-4 pt-3 border-t border-teal-500 flex items-center space-x-3">
+        <Image 
+          src={relogioicon} 
+          alt="Ícone de Relógio"
+          width={20}
+          height={20}
+        />
+        <div class="flex flex-col text-sm">
+          <span class="font-semibold">Horário de Funcionamento</span>
+          <span>Segunda a Sábado, das 07:30h às 18h</span>
+        </div>
+      </div>
+      
+      <div class="mt-4 pt-3">
+        <a href="#" class="block">
+          <button class="w-full border border-white hover:bg-teal-600 transition-colors text-white font-medium py-2 px-4 rounded-3xl">
+            Agendar Consulta
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </header>
 
 <script>
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
+    function closeMenu() {
+      if (mobileMenu) {
+        mobileMenu.style.maxHeight = '0px';
+      }
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+      
+
+      if (menuToggle) {
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].classList.remove('rotate-45', 'translate-y-2');
+        spans[1].classList.remove('opacity-0');
+        spans[2].classList.remove('-rotate-45', '-translate-y-2');
+      }
+      
+   
+      document.removeEventListener('click', handleOutsideClick);
+    }
+  
+    function handleOutsideClick(event: MouseEvent) {
+      if (
+        (!mobileMenu || !mobileMenu.contains(event.target as Node)) &&
+        (!menuToggle || !menuToggle.contains(event.target as Node))
+      ) {
+        closeMenu();
+      }
+    }
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+          closeMenu();
+        } else {
+
+          menuToggle.setAttribute('aria-expanded', 'true');
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          let spans;
+          if (menuToggle) {
+            spans = menuToggle.querySelectorAll('span');
+            spans[0].classList.add('rotate-45', 'translate-y-2');
+            spans[1].classList.add('opacity-0');
+            spans[2].classList.add('-rotate-45', '-translate-y-2');
+          }
+          
+
+          setTimeout(() => {
+            document.addEventListener('click', handleOutsideClick);
+          }, 10);
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+      
+
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+        }
+      });
+    }
+  });
 </script>
