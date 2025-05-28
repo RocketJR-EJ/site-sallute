@@ -4,86 +4,70 @@ import salutelogo from "../../assets/salluteLogoBranco.svg";
 import relogioicon from "../../assets/relogioicon.svg";
 ---
 
-<header class="bg-[#3ABDAD] text-white py-4 px-6 fixed top-0 left-0 right-0 z-50">
+<header class="bg-[#3ABDAD] text-white py-3 sticky top-0 z-50" id="main-header">
   <nav class="flex items-center justify-between max-w-7xl mx-auto">
-
     <div class="flex-shrink-0">
-      <Image 
-        src={salutelogo} 
-        alt="Sallute Logo"
-        width={120}
-        height={60}
-        class="object-contain"
-      />
+      <a href="/">
+        <Image
+          src={salutelogo}
+          alt="Sallute Logo"
+          width={120}
+          height={60}
+          class="object-contain"/>
+        </a>
     </div>
 
-    <button 
-      id="menu-toggle" 
-      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
-      aria-label="Menu"
-      aria-expanded="false"
-    >
+    <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5" aria-label="Menu" aria-expanded="false">
       <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
       <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
       <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
     </button>
 
-
     <ul class="hidden md:flex space-x-8 font-medium">
-      <li><a href="#" class="hover:text-teal-900 transition-colors">Início</a></li>
-      <li><a href="#" class="hover:text-teal-900 transition-colors">Quem Somos</a></li>
-      <li><a href="#" class="hover:text-teal-900 transition-colors">Serviços</a></li>
-      <li><a href="#" class="hover:text-teal-900 transition-colors">Corpo Clínico</a></li>
+      <li><a href="/#Home" class="hover:text-teal-900 transition-colors">Início</a></li>
+      <li><a href="/#Section2" class="hover:text-teal-900 transition-colors">Quem Somos</a></li>
+      <li><a href="/#Serviços" class="hover:text-teal-900 transition-colors">Serviços</a></li>
+      <li><a href="/CorpoClinico" class="hover:text-teal-900 transition-colors">Corpo Clínico</a></li>
     </ul>
-  
+
     <div class="hidden lg:flex items-center space-x-3">
-      <Image 
-        src={relogioicon} 
-        alt="Ícone de Relógio"
-        width={24}
-        height={24}
-      />
+      <Image src={relogioicon} alt="Ícone de Relógio" width={24} height={24} />
       <div class="flex flex-col text-sm">
-        <span class="font-semibold">Horário de Funcionamento</span>
-        <span>Segunda a Sábado, das 07:30h às 18h</span>
+      <span class="font-semibold">Horário de Funcionamento</span>
+      <span>Segunda a Sábado, das 07:30h às 18h</span>
       </div>
     </div>
-    
+
     <a href="#" class="hidden md:block ml-4">
-      <button class="border border-white hover:bg-teal-600 transition-colors text-white font-medium py-1 px-5 rounded-3xl">
-        Agendar Consulta
-      </button>
+      <button class="border border-white hover:bg-teal-600 transition-colors text-white font-medium py-1 px-5 rounded-3xl">Agendar Consulta</button>
     </a>
   </nav>
 
- 
   <div id="mobile-menu" class="md:hidden bg-[#3ABDAD] shadow-lg absolute left-0 right-0 top-[76px] overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
     <div class="px-6 py-4">
       <ul class="flex flex-col space-y-3">
-        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Início</a></li>
-        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Quem Somos</a></li>
-        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Serviços</a></li>
-        <li><a href="#" class="block py-2 hover:text-blue-300 transition-colors">Corpo Clínico</a></li>
+      <li><a href="/#Home" class="block py-2 hover:text-teal-900 transition-colors">Início</a></li>
+      <li><a href="/#Section2" class="block py-2 hover:text-teal-900 transition-colors">Quem Somos</a></li>
+      <li><a href="/#Serviços" class="block py-2 hover:text-teal-900 transition-colors">Serviços</a></li>
+      <li><a href="/CorpoClinico" class="block py-2 hover:text-teal-900 transition-colors">Corpo Clínico</a></li>
       </ul>
-      
+
       <div class="mt-4 pt-3 border-t border-teal-500 flex items-center space-x-3">
-        <Image 
-          src={relogioicon} 
+        <Image
+          src={relogioicon}
           alt="Ícone de Relógio"
           width={20}
           height={20}
+          loading={"eager"}
         />
         <div class="flex flex-col text-sm">
-          <span class="font-semibold">Horário de Funcionamento</span>
-          <span>Segunda a Sábado, das 07:30h às 18h</span>
+        <span class="font-semibold">Horário de Funcionamento</span>
+        <span>Segunda a Sábado, das 07:30h às 18h</span>
         </div>
       </div>
-      
-      <div class="mt-4 pt-3">
-        <a href="#" class="block">
-          <button class="w-full border border-white hover:bg-teal-600 transition-colors text-white font-medium py-2 px-4 rounded-3xl">
-            Agendar Consulta
-          </button>
+
+      <div class="mt-4 pt-3"><a href="#" class="block">
+      <button class="w-full border border-white hover:bg-teal-600 transition-colors text-white font-medium py-2 px-4 rounded-3xl">Agendar Consulta</button>
         </a>
       </div>
     </div>
@@ -91,30 +75,31 @@ import relogioicon from "../../assets/relogioicon.svg";
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
 
     function closeMenu() {
       if (mobileMenu) {
-        mobileMenu.style.maxHeight = '0px';
+        mobileMenu.style.maxHeight = "0px";
       }
       if (menuToggle) {
-        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute("aria-expanded", "false");
       }
-      
 
       if (menuToggle) {
-        const spans = menuToggle.querySelectorAll('span');
-        spans[0].classList.remove('rotate-45', 'translate-y-2');
-        spans[1].classList.remove('opacity-0');
-        spans[2].classList.remove('-rotate-45', '-translate-y-2');
+        const spans = menuToggle.querySelectorAll("span");
+        spans[0].classList.remove("rotate-45", "translate-y-2");
+        spans[1].classList.remove("opacity-0");
+        spans[2].classList.remove("-rotate-45", "-translate-y-2");
       }
-      
-   
-      document.removeEventListener('click', handleOutsideClick);
+
+      document.removeEventListener("click", handleOutsideClick);
     }
-  
+
     function handleOutsideClick(event: MouseEvent) {
       if (
         (!mobileMenu || !mobileMenu.contains(event.target as Node)) &&
@@ -124,46 +109,46 @@ import relogioicon from "../../assets/relogioicon.svg";
       }
     }
     if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', (event) => {
+      menuToggle.addEventListener("click", (event) => {
         event.stopPropagation();
 
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+
         if (isExpanded) {
           closeMenu();
         } else {
-
-          menuToggle.setAttribute('aria-expanded', 'true');
-          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          menuToggle.setAttribute("aria-expanded", "true");
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
           let spans;
           if (menuToggle) {
-            spans = menuToggle.querySelectorAll('span');
-            spans[0].classList.add('rotate-45', 'translate-y-2');
-            spans[1].classList.add('opacity-0');
-            spans[2].classList.add('-rotate-45', '-translate-y-2');
+            spans = menuToggle.querySelectorAll("span");
+            spans[0].classList.add("rotate-45", "translate-y-2");
+            spans[1].classList.add("opacity-0");
+            spans[2].classList.add("-rotate-45", "-translate-y-2");
           }
-          
 
           setTimeout(() => {
-            document.addEventListener('click', handleOutsideClick);
+            document.addEventListener("click", handleOutsideClick);
           }, 10);
         }
       });
 
-      window.addEventListener('resize', () => {
+      window.addEventListener("resize", () => {
         if (window.innerWidth >= 768) {
           closeMenu();
         }
       });
-      
 
-      const mobileLinks = mobileMenu.querySelectorAll('a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
       });
 
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          menuToggle.getAttribute("aria-expanded") === "true"
+        ) {
           closeMenu();
         }
       });
