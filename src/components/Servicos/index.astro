@@ -2,6 +2,8 @@
 import DescriptionSection from '../../components/ui/DescriptionSection.astro';
 import IconePlus from '../../assets/plus.svg'
 
+import slideImage from "../../assets/ImgsSection1/img2.jpg";
+
 import CardDoutores from '../../components/ui/CardDoutores.astro'
 import Ultrassonografista_1 from '../../assets/especialistas/Cicero_ultrassonografista.png'
 import Ultrassonografista_2 from '../../assets/especialistas/Ubirajara_ultrassonografista.png'
@@ -12,25 +14,33 @@ import LaserDepilacao from '../../assets/especialistas/Juliana_fisio.png'
 import { object } from 'astro:schema';
 
 const ultrassom = [
-  {img: Ultrassonografista_2.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true },  
-  { img: Ultrassonografista_1.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida"}
+  {img: Ultrassonografista_2.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", conselho:"CRM: 7362-AL", objectTop: true},
+  {img: Ultrassonografista_1.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida", conselho: "CRM: 7362-AL", objectTop: false }
     
 ];
 
 const fisio = [
-    { img: Fisioterapeuta_1.src, title: "Fisioterapeuta", text: "Dr. Juarez Alexandre"}
+    { img: Fisioterapeuta_1.src, title: "Fisioterapeuta", text: "Dr. Juarez Alexandre", conselho:"CREFITO: 283695- F"}
 ];
 
 const laser = [
-    { img: LaserDepilacao.src, title: "Fisioterapeuta", text: "Dra. Juliana Oliveira"}
+  { img: LaserDepilacao.src, title: "Fisioterapeuta", text: "Dra. Juliana Oliveira", conselho:"CREFITO: 351313-F "}
 ];
 ---
-
+<section class="w-full flex justify-center items-center min-h-screen">
+  <img 
+    src={slideImage.src} 
+    alt="Imagem dos serviços da clínica" 
+    class="rounded-lg object-cover w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh] max-h-screen"
+    style="aspect-ratio: 16/7;"
+    loading="lazy"
+  />
+</section>
 <section class="flex flex-col items-center justify-center py-8 sm:py-10 md:py-14 lg:py-16 gap-6 max-w-7xl mx-auto px-3 sm:px-5 md:px-8 lg:px-8 mt-10">
   <DescriptionSection 
     img={IconePlus.src}
     label='NOSSOS SERVIÇOS'
-    title='Conheça os Serviços da Sallute Clínica Médica'
+    title='Conheça Nossos Serviços'
   />
   <!-- Seção de serviços da clínica médica -->
   <div class="flex flex-col gap-8 md:gap-10 lg:gap-12 w-full">
@@ -77,7 +87,7 @@ const laser = [
         <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
         <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
           {ultrassom.map((doctor) => (
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} background="#fff" />
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} conselho={doctor.conselho} objectTop={doctor.objectTop} background="#fff" />
           ))}
         </div>
       </div>
@@ -104,7 +114,7 @@ const laser = [
         <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
         <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
           {fisio.map((doctor) => (
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} conselho={doctor.conselho} />
           ))}
         </div>
       </div>
@@ -146,7 +156,7 @@ const laser = [
         <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
         <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
           {laser.map((doctor) => (
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} />
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} conselho={doctor.conselho} />
           ))}
         </div>
       </div>
