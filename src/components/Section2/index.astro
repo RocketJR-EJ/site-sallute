@@ -35,19 +35,23 @@ section {
         
 
     <div class="flex flex-wrap justify-center xl:grid xl:grid-cols-3 2xl:grid 2xl:grid-cols-3 sm:p-[15px] gap-4 sm:gap-8">
-        <CardEspecialidades
-            img_background={imgClinico.src}
-            img_logo={iconClinico.src}
-            alt="Corpo Clínico"
-            title="Corpo Clínico"
-        />
+        <div onclick="window.location.href = '#corpo-clinico'" style="cursor:pointer">
+            <CardEspecialidades
+                img_background={imgClinico.src}
+                img_logo={iconClinico.src}
+                alt="Corpo Clínico"
+                title="Corpo Clínico"
+            />
+        </div>
 
-        <CardEspecialidades
-            img_background={imgUltrassom.src}
-            img_logo={iconUltrassom.src}
-            alt="Ultrassonografia"
-            title="Ultrassonografia"
-        />
+        <div onclick="window.location.href = '/Servicos#ultrassonografia'" style="cursor:pointer">
+            <CardEspecialidades
+                img_background={imgUltrassom.src}
+                img_logo={iconUltrassom.src}
+                alt="Ultrassonografia"
+                title="Ultrassonografia"
+            />
+        </div>
 
          <CardEspecialidades
             img_background={imgDermato.src}
@@ -63,19 +67,23 @@ section {
             title="Exames em Geral"
         />
 
+        <div onclick="window.location.href = '/Servicos#depilacao'" style="cursor:pointer">
         <CardEspecialidades
             img_background={imgDepilacao.src}
             img_logo={iconDepilacao.src}
             alt="Depilação a Laser"
             title="Depilação a Laser"
         />
+        </div>
 
-        <CardEspecialidades
-            img_background={imgDermato.src}
-            img_logo={iconFisio.src}
-            alt="Fisioterapia"
-            title="Fisioterapia"
-        />
+        <div onclick="window.location.href= '/Servicos#fisioterapia'" style="cursor:pointer">
+            <CardEspecialidades
+                img_background={imgDermato.src}
+                img_logo={iconFisio.src}
+                alt="Fisioterapia"
+                title="Fisioterapia"
+            />
+        </div>
 
         
     </div>
