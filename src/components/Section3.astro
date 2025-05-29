@@ -55,7 +55,11 @@ const doctors = [
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+
 <section id="Section3" class="w-full py-20 bg-[#F4F7FF]">
+
+<section id="corpo-clinico" class="w-full py-20 bg-[#F4F7FF]">
+
   <div class="container mx-auto px-4 max-w-5xl">
     <div class="flex justify-center items-center">
       <div class="flex items-center gap-2">
@@ -74,7 +78,7 @@ const doctors = [
       <div class="swiper-wrapper px-10 lg:px-15">
         {doctors.map((doctor) => (
           <div class="swiper-slide flex justify-center ">
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} objectTop={doctor.objectTop} />
+            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} objectTop={doctor.objectTop} background="#F4F7FF" />
           </div>
         ))}
       </div>

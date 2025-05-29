@@ -10,6 +10,7 @@ import relogioicon from "../../assets/relogioicon.svg";
       <a href="/">
         <Image
           src={salutelogo}
+
           alt="Sallute Logo"
           width={120}
           height={60}
@@ -17,17 +18,87 @@ import relogioicon from "../../assets/relogioicon.svg";
         </a>
     </div>
 
+          alt="Salute Logo"
+          class="h-10 lg:h-12"
+          width={140}
+          height={100}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </a>
+      <div class="flex items-center gap-10">
+        <ul
+          class="hidden lg:flex items-center gap-8 xl:gap-30 text-white font-medium"
+        >
+          <li>
+            <a href="/" class="hover:text-gray-200 transition-colors">Início</a>
+          </li>
+          <li>
+            <a href="/Servicos" class="hover:text-gray-200 transition-colors"
+              >Serviços</a
+            >
+          </li>
+          <li>
+            <a href="/contato" class="hover:text-gray-200 transition-colors"
+              >Corpo Clínico</a
+            >
+          </li>
+          <li>
+            <a href="/QuemSomos" class="hover:text-gray-200 transition-colors"
+              >Quem Somos?</a
+            >
+          </li>
+        </ul>
+      </div>
+
+
     <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5" aria-label="Menu" aria-expanded="false">
       <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
       <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
       <span class="w-6 h-0.5 bg-white transition-all duration-200"></span>
     </button>
 
+
     <ul class="hidden md:flex space-x-8 font-medium">
       <li><a href="/#Home" class="hover:text-teal-900 transition-colors">Início</a></li>
       <li><a href="/#Section2" class="hover:text-teal-900 transition-colors">Quem Somos</a></li>
       <li><a href="/#Serviços" class="hover:text-teal-900 transition-colors">Serviços</a></li>
       <li><a href="/CorpoClinico" class="hover:text-teal-900 transition-colors">Corpo Clínico</a></li>
+
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden bg-teal-400 pb-4 px-4 shadow-lg"
+  >
+    <ul class="space-y-3 text-white">
+      <li>
+        <a
+          href="/"
+          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
+          >Início</a
+        >
+      </li>
+      <li>
+        <a
+          href="/Servicos"
+          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
+          >Serviços</a
+        >
+      </li>
+      <li>
+        <a
+          href="/contato"
+          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
+          >Corpo Clínico</a
+        >
+      </li>
+      <li>
+        <a
+          href="/QuemSomos"
+          class="block py-2 hover:bg-teal-500 px-3 rounded transition-colors"
+          >Quem Somos?</a
+        >
+      </li>
+
     </ul>
 
     <div class="hidden lg:flex items-center space-x-3">
