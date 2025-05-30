@@ -1,0 +1,17 @@
+---
+import Map from "../ui/Localizacao/Map.astro"; 
+import DescriptionSection from '../../components/ui/DescricaoSection/DescriptionSection.astro';
+import IconePlus from '../../assets/plus.svg'
+---
+
+<section class="flex flex-col items-center w-full py-10 sm:py-16 bg-white">
+
+    <DescriptionSection 
+        img={IconePlus.src}
+        label='NOSSA LOCALIZAÇÃO'
+        title='Fácil e Rápido de Chegar'
+        description='Localização estratégica para que você chegue com tranquilidade e sem complicações.'
+    />
+
+    <Map /> 
+</section>
