@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import Iconfacebook from "../assets/socialbuttons/facebook.svg";
-import Iconwhatsapp from "../assets/socialbuttons/whatsapp.svg";
-import Iconinstagram from "../assets/socialbuttons/instagram.svg";
-import Icontelefone from "../assets/socialbuttons/telefone.svg";
-import Iconemail from "../assets/socialbuttons/email.svg";
-import Iconrocket from "../assets/logo-rocket.svg";
-import Frase2 from "../assets/Frase2.svg";
-import LogoSalluteBranco from "../assets/salluteLogoBranco.svg";
+import Iconfacebook from "../../assets/socialbuttons/facebook.svg";
+import Iconwhatsapp from "../../assets/socialbuttons/whatsapp.svg";
+import Iconinstagram from "../../assets/socialbuttons/instagram.svg";
+import Icontelefone from "../../assets/socialbuttons/telefone.svg";
+import Iconemail from "../../assets/socialbuttons/email.svg";
+import Iconrocket from "../../assets/logo-rocket.svg";
+import Frase2 from "../../assets/Frase2.svg";
+import LogoSalluteBranco from "../../assets/salluteLogoBranco.svg";
 ---
 
 <style>
@@ -40,19 +40,19 @@ import LogoSalluteBranco from "../assets/salluteLogoBranco.svg";
         </div>
 
         <div class="flex space-x-3 mt-2 justify-center md:justify-start">
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+          <a href="https://wa.me/5582999689119" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
             <img src={Iconwhatsapp.src} alt="WhatsApp" class="w-5 h-5" />
           </a>
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+          <a href="https://www.instagram.com/sallute.clinica/" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
             <img src={Iconinstagram.src} alt="Instagram" class="w-5 h-5" />
           </a>
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+          <a href="https://www.facebook.com/sallute.penedo/" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
             <img src={Iconfacebook.src} alt="Facebook" class="w-5 h-5" />
           </a>
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+          <a href="https://wa.me/5582999689119" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
             <img src={Icontelefone.src} alt="Telefone" class="w-5 h-5" />
           </a>
-          <a href="#" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
+          <a href="#E-mail" class="bg-teal-500 hover:bg-teal-400 p-2 rounded-full">
             <img src={Iconemail.src} alt="Email" class="w-5 h-5" />
           </a>
         </div>
@@ -67,12 +67,10 @@ import LogoSalluteBranco from "../assets/salluteLogoBranco.svg";
             Institucional
           </h4>
           <ul class="space-y-0.5 text-base text-[#FAFAFA]">
-            <li><a href="#" class="hover:underline">Sobre Nós</a></li>
-            <li><a href="#" class="hover:underline">Nossos Valores</a></li>
-            <li>
-              <a href="#" class="hover:underline">Política de Privacidade</a>
-            </li>
-            <li><a href="#" class="hover:underline">Termos de Uso</a></li>
+            <li><a href="/QuemSomos#historia" class="hover:underline">Sobre Nós</a></li>
+            <li><a href="/QuemSomos#valores" class="hover:underline">Nossos Valores</a></li>
+            <li><a href="/PoliticaPrivacidade" class="hover:underline">Política de Privacidade</a></li>
+            <li><a href="/TermosUso" class="hover:underline">Termos de Uso</a></li>
           </ul>
         </div>
         <div class="text-left">
@@ -82,9 +80,9 @@ import LogoSalluteBranco from "../assets/salluteLogoBranco.svg";
             Empresa
           </h4>
           <ul class="space-y-0.5 text-base text-[#FAFAFA]">
-            <li><a href="#" class="hover:underline">Quem Somos</a></li>
-            <li><a href="#" class="hover:underline">Nossa Estrutura</a></li>
-            <li><a href="#" class="hover:underline">Trabalhe Conosco</a></li>
+            <li><a href="/QuemSomos#quemsomos" class="hover:underline">Quem Somos</a></li>
+            <li><a href="/QuemSomos#estrutura" class="hover:underline">Nossa Estrutura</a></li>
+            <li><a href="https://wa.me/5582999689119" class="hover:underline">Trabalhe Conosco</a></li>
             <li>
               <a href="#" class="hover:underline">SAC - 82 9 9993-0051</a>
             </li>
@@ -97,12 +95,10 @@ import LogoSalluteBranco from "../assets/salluteLogoBranco.svg";
             Serviços
           </h4>
           <ul class="space-y-0.5 text-base text-[#FAFAFA]">
-            <li>
-              <a href="#" class="hover:underline">Exames Laboratoriais</a>
-            </li>
-            <li><a href="#" class="hover:underline">Checkups</a></li>
-            <li><a href="#" class="hover:underline">Depilação a Laser</a></li>
-            <li><a href="#" class="hover:underline">Psicólogo</a></li>
+            <li><a href="/Servicos#ultrassonografia" class="hover:underline">Ultrassonografia</a></li>
+            <li><a href="/Servicos#depilacao" class="hover:underline">Depilação a Laser</a></li>
+            <li><a href="#" class="hover:underline">Exames em Geral</a></li>
+            <li><a href="#" class="hover:underline">Exames Laboratoriais</a></li>
           </ul>
         </div>
       </div>

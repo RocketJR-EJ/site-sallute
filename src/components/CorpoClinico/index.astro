@@ -1,6 +1,5 @@
 ---
-import CardDoutores from "../ui/CardDoutores.astro"
-
+import CardDoutores from "../../components/ui/Cards/CardDoutores.astro"
 import diogo from "../../assets/especialistas/Diogo-Bento.png"
 import eliane from "../../assets/especialistas/Eliane-Calumby.jpg"
 import victor from "../../assets/especialistas/Victor-Hugo.png"
@@ -24,7 +23,7 @@ import ubirajara from "../../assets/especialistas/Ubirajara_ultrassonografista.p
 import victoria from "../../assets/especialistas/Victoria_nutri.png"
 import daise from "../../assets/especialistas/Daise_Nicacio.png"
 import larissa from "../../assets/especialistas/Larissa_Tenorio.jpeg"
-import DescriptionSection from "../ui/DescriptionSection.astro"
+import DescriptionSection from "../../components/ui/DescricaoSection/DescriptionSection.astro"
 import IconePlus from '../../assets/plus.svg'
 
 
@@ -59,9 +58,9 @@ const doctors = [
     
     <DescriptionSection 
         img={IconePlus.src}
-        label='NOSSOS AMBIENTES'
-        title='Conforto, Segurança e Atendimento Humanizado'
-        description='A Clínica conta com um ambiente moderno e acolhedor, pensado para oferecer conforto, bem-estar e uma experiência humanizada aos pacientes.'
+        label='NOSSOS MÉDICOS'
+        title='Conheça Nossos Médicos Especialistas'
+        description='Nossa equipe de médicos especializados se dedica a fornecer atendimento personalizado em uma ampla variedade de áreas médicas.'
         />
     <div class="mt-10">
       <div class="flex flex-wrap justify-center gap-4">
