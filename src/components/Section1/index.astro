@@ -9,43 +9,43 @@ import "keen-slider/keen-slider.min.css";
 
 <section id="Home" class="relative w-full overflow-hidden">
   <div id="my-keen-slider" class="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[900px]">
-  <div class="fader__slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out">
-      <Image
-        src={slideImage}
-        alt="Slide 1"
-        class="w-full h-full object-cover object-center"
-        loading={"eager"}
-      />
-
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-      <div class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24">
+    <div class="fader__slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out">
         <Image
-          src={imagemcta}
-          width={600}
-          height={100}
-          alt="Logo CTA"
-          class="hidden lg:block w-[600px] mb-8"
+          src={slideImage}
+          alt="Slide 1"
+          class="w-full h-full object-cover object-center"
           loading={"eager"}
         />
-        <h2 class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl">Sallute – Sua parceira de confiança em saúde.</h2>
-        <p class="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8">Atendimento médico completo com médicos especialistas, tecnologia
-          avançada e atendimento humanizado.</p>
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto">
-          <a
-            href="https://wa.me/5582999689119"
-            class="bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-white text-sm sm:text-base font-bold py-2 px-6 sm:px-8 rounded-3xl transition-colors"
-          >
-            Agende uma Consulta
-          </a>
-          <a
-            href="/#Servicos"
-            class="hidden sm:block border border-white text-white text-sm sm:text-base font-bold py-2 px-4 rounded-3xl hover:bg-white hover:text-[#0B7164] transition-colors"
-          >
-            Nossos Serviços
-          </a>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24">
+          <Image
+            src={imagemcta}
+            width={600}
+            height={100}
+            alt="Logo CTA"
+            class="w-48 md:w-64 lg:w-[600px] mb-4 self-start"
+            loading={"eager"}
+          />
+          <h2 class="hidden lg:block text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl">Sallute – Sua parceira de confiança em saúde.</h2>
+          <p class="hidden lg:block text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8">Atendimento médico completo com médicos especialistas, tecnologia
+            avançada e atendimento humanizado.</p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto">
+            <a
+              href="https://wa.me/5582999689119"
+              class="bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-white text-sm sm:text-base font-bold py-2 px-6 sm:px-8 rounded-3xl transition-colors"
+            >
+              Agende uma Consulta
+            </a>
+            <a
+              href="/#Servicos"
+              class="hidden sm:block border border-white text-white text-sm sm:text-base font-bold py-2 px-4 rounded-3xl hover:bg-white hover:text-[#0B7164] transition-colors"
+            >
+              Nossos Serviços
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
     <div
       class="fader__slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out"
@@ -57,25 +57,34 @@ import "keen-slider/keen-slider.min.css";
         loading={"eager"}
       />
 
-      <div
-        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
-      >
-      </div>
-      <div
-        class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24"
-      >
-        <h2
-          class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl"
-        >
-          Um ambiente acolhedor para toda a sua família
-        </h2>
-        <p
-          class="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8"
-        >
-          Ambientes acolhedores, pensados para proporcionar conforto, bem-estar
-          e uma experiência humanizada em cada detalhe.
-        </p>
-      </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24">
+          <Image
+            src={imagemcta}
+            width={600}
+            height={100}
+            alt="Logo CTA"
+            class="w-48 md:w-64 lg:w-[600px] mb-4 self-start"
+            loading={"eager"}
+          />
+          <h2 class="hidden lg:block text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl">Sallute – Sua parceira de confiança em saúde.</h2>
+          <p class="hidden lg:block text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8">Atendimento médico completo com médicos especialistas, tecnologia
+            avançada e atendimento humanizado.</p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto">
+            <a
+              href="https://wa.me/5582999689119"
+              class="bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-white text-sm sm:text-base font-bold py-2 px-6 sm:px-8 rounded-3xl transition-colors"
+            >
+              Agende uma Consulta
+            </a>
+            <a
+              href="/#Servicos"
+              class="hidden sm:block border border-white text-white text-sm sm:text-base font-bold py-2 px-4 rounded-3xl hover:bg-white hover:text-[#0B7164] transition-colors"
+            >
+              Nossos Serviços
+            </a>
+          </div>
+        </div>
     </div>
 
     <div
@@ -88,25 +97,34 @@ import "keen-slider/keen-slider.min.css";
         loading={"eager"}
       />
 
-      <div
-        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
-      >
-      </div>
-      <div
-        class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24"
-      >
-        <h2
-          class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl"
-        >
-          Tecnologia e inovação a serviço da sua saúde
-        </h2>
-        <p
-          class="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8"
-        >
-          Equipamentos modernos e profissionais qualificados para cuidar do que
-          mais importa: você.
-        </p>
-      </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-end p-6 pb-12 text-center md:items-start md:text-left md:justify-center md:px-16 lg:px-24">
+          <Image
+            src={imagemcta}
+            width={600}
+            height={100}
+            alt="Logo CTA"
+            class="w-48 md:w-64 lg:w-[600px] mb-4 self-start"
+            loading={"eager"}
+          />
+          <h2 class="hidden lg:block text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-6 md:max-w-2xl">Sallute – Sua parceira de confiança em saúde.</h2>
+          <p class="hidden lg:block text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg md:max-w-2xl mb-4 md:mb-8">Atendimento médico completo com médicos especialistas, tecnologia
+            avançada e atendimento humanizado.</p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto">
+            <a
+              href="https://wa.me/5582999689119"
+              class="bg-gradient-to-r from-[#37B5A6] to-[#0B7164] text-white text-sm sm:text-base font-bold py-2 px-6 sm:px-8 rounded-3xl transition-colors"
+            >
+              Agende uma Consulta
+            </a>
+            <a
+              href="/#Servicos"
+              class="hidden sm:block border border-white text-white text-sm sm:text-base font-bold py-2 px-4 rounded-3xl hover:bg-white hover:text-[#0B7164] transition-colors"
+            >
+              Nossos Serviços
+            </a>
+          </div>
+        </div>
     </div>
   </div>
 </section>
