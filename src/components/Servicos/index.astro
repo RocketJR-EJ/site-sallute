@@ -26,17 +26,16 @@ const laser = [
 
 <Section1 />
 
-<section id="ultrassonografia" class="flex flex-col items-center justify-center py-8 sm:py-10 md:py-14 lg:py-16 gap-6 max-w-7xl mx-auto px-3 sm:px-5 md:px-8 lg:px-8">
+<section id="ultrassonografia" class="scroll-mt-20 flex flex-col items-center justify-center py-8 sm:py-10 md:py-14 lg:py-16 gap-6 max-w-7xl mx-auto px-3 sm:px-5 md:px-8 lg:px-8 mb-8">
   <DescriptionSection 
     img={IconePlus.src}
     label='NOSSOS SERVIÇOS'
     title='Conheça Nossos Serviços'
   />
-  <!-- Seção de serviços da clínica médica -->
-  <div class="flex flex-col mt-10 gap-8 md:gap-10 lg:gap-12 w-full">
-    <!-- Ultrassonografia -->
-    <div class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white p-4 sm:p-6">
-      <!-- Texto à esquerda -->   
+
+  <div class="flex flex-col mt-6 gap-8 md:gap-10 lg:gap-12 w-full">
+    <div class="flex flex-col xl:flex-row xl:items-start gap-6 bg-white p-4 sm:p-6">
+
       <div class="flex-1 min-w-0">
         <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
           Ultrassonografia
@@ -69,23 +68,31 @@ const laser = [
           <li>ARTICULAÇÃO JOELHO;</li>
           <li>ARTICULAÇÃO TORNOZELO;</li>
           <li>QUADRIL;</li>
-          <li id="fisioterapia">PÉ.</li>
+          <li>PÉ.</li>
         </ul>
       </div>
-      <!-- Fotos à direita -->
+
       <div class="flex flex-col items-center gap-2 mt-6 md:mt-0 w-full lg:w-auto lg:ml-6">
         <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
         <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
           {ultrassom.map((doctor) => (
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} conselho={doctor.conselho} objectTop={doctor.objectTop} background="#fff" />
+            <CardDoutores 
+              img={doctor.img} 
+              title={doctor.title} 
+              text={doctor.text} 
+              conselho={doctor.conselho} 
+              objectTop={doctor.objectTop} 
+              background="#fff"
+              alt={`Foto do ${doctor.text}, ${doctor.title.toLowerCase()}`}
+            />
           ))}
         </div>
       </div>
     </div>
-    <!-- Fisioterapia -->
-    <div class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white p-4 sm:p-6">
+
+    <div class="flex flex-col xl:flex-row xl:items-start gap-6 bg-white p-4 sm:p-6">
       <div class="flex-1 min-w-0">
-        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
+        <h2 id="fisioterapia" class="scroll-mt-30 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
           Fisioterapia
         </h2>
         <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
@@ -97,22 +104,28 @@ const laser = [
           <li>FISIOTERAPIA ESPORTIVA;</li>
           <li>FISIOTERAPIA NEUROLÓGICA;</li>
           <li>FISIOTERAPIA RESPIRATÓRIA;</li>
-          <li id="depilacao">FISIOTERAPIA GERIÁTRICA;</li>
+          <li>FISIOTERAPIA GERIÁTRICA;</li>
         </ul>
       </div>
       <div class="flex flex-col items-center gap-2 mt-6 md:mt-0 w-full lg:w-auto lg:ml-6">
         <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
         <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
           {fisio.map((doctor) => (
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} conselho={doctor.conselho} />
+            <CardDoutores 
+              img={doctor.img} 
+              title={doctor.title} 
+              text={doctor.text} 
+              conselho={doctor.conselho}
+              alt={`Foto do ${doctor.text}, ${doctor.title.toLowerCase()}`}
+            />
           ))}
         </div>
       </div>
     </div>
-    <!-- Depilação a Laser -->
-    <div class="flex flex-col lg:flex-row lg:items-start gap-6 bg-white p-4 sm:p-6">
+
+    <div class="flex flex-col xl:flex-row xl:items-start gap-6 bg-white p-4 sm:p-6">
       <div class="flex-1 min-w-0">
-        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
+        <h2 id="depilacao" class="scroll-mt-30 md:scroll-mt-32 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#031E2D] mt-4 mb-3 text-left">
           Depilação a Laser
         </h2>
         <p class="text-justify text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-2xl mb-3">
@@ -142,11 +155,18 @@ const laser = [
           <li>COSTAS.</li>
         </ul>
       </div>
+      
       <div class="flex flex-col items-center gap-2 mt-6 md:mt-0 w-full lg:w-auto lg:ml-6">
         <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-[#031E2D] mb-2 text-center">Profissionais responsáveis</h3>
         <div class="flex flex-row flex-wrap gap-3 w-full justify-center">
           {laser.map((doctor) => (
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} conselho={doctor.conselho} />
+            <CardDoutores 
+              img={doctor.img} 
+              title={doctor.title} 
+              text={doctor.text} 
+              conselho={doctor.conselho}
+              alt={`Foto da ${doctor.text}, ${doctor.title.toLowerCase()}`}
+            />
           ))}
         </div>
       </div>
