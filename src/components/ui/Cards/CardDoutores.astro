@@ -6,8 +6,9 @@ export interface Props {
   conselho?: string
   objectTop?: boolean
   background?: string
+  alt?: string // Novo: alt opcional
 }
-const { img, title, text, conselho, objectTop, background = '#fff' } = Astro.props
+const { img, title, text, conselho, objectTop, background = '#fff', alt } = Astro.props
 ---
 
 <article
@@ -15,7 +16,7 @@ const { img, title, text, conselho, objectTop, background = '#fff' } = Astro.pro
 >
   <img
     src={img}
-    alt={title}
+    alt={alt ? alt : `Foto de ${text}, ${title.toLowerCase()}`}
     class={`w-32 lg:w-55 h-32 lg:h-55 rounded-full object-cover ${objectTop ? 'object-top' : ''}`}
 />
   <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-2 lg:pt-4">{title}</h2>
