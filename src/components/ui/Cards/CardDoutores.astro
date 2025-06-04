@@ -1,0 +1,25 @@
+---
+export interface Props {
+  img: string
+  title: string
+  text: string
+  conselho?: string
+  objectTop?: boolean
+  background?: string
+  alt?: string
+}
+const { img, title, text, conselho, objectTop, background = '#fff', alt } = Astro.props
+---
+
+<article
+  class="rounded-lg overflow-hidden w-72 flex flex-col items-center p-4"
+>
+  <img
+    src={img}
+    alt={alt ? alt : `Foto de ${text}, ${title.toLowerCase()}`}
+    class={`w-32 lg:w-55 h-32 lg:h-55 rounded-full object-cover ${objectTop ? 'object-top' : ''}`}
+/>
+  <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-2 lg:pt-4">{title}</h2>
+  <p class="text-base font-bold text-gray-600 text-center">{text}</p>
+  <p class="text-base font-bold text-gray-600 text-center">{conselho}</p> 
+</article>

@@ -1,0 +1,87 @@
+---
+import CardEspecialidades from "../ui/Cards/cardEspecialidades.astro"
+import DescriptionSection from '../../components/ui/DescricaoSection/DescriptionSection.astro';
+import IconePlus from '../../assets/plus.svg'
+import imgDepilacao from "../../assets/backgroundsSection2/img_depilação_a_laser.avif";
+import imgUltrassom from "../../assets/backgroundsSection2/img_ultrassonografia.avif";
+import imgDermato from "../../assets/backgroundsSection2/img_dermatologista.avif";
+import imgClinico from "../../assets/backgroundsSection2/img_clinica_geral.avif";
+import iconDepilacao from "../../assets/cardsIcons/icon1_services.svg";
+import iconUltrassom from "../../assets/cardsIcons/icon2_services.svg";
+import iconClinico from "../../assets/cardsIcons/icon4_services.svg";
+import iconFisio from "../../assets/cardsIcons/icon5_services.svg";
+import iconExamesLaboratorial from "../../assets/cardsIcons/icon6_services.svg";
+import iconExamesGeral from "../../assets/cardsIcons/icon7_services.svg";
+---
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+section {
+    font-family: 'Inter', sans-serif;
+}
+</style>
+
+<section id="Servicos" class="flex flex-col items-center justify-center px-[8px] py-[50px] sm:py-[100px] gap-14 ">
+    
+    <DescriptionSection 
+    img={IconePlus.src}
+    label='QUEM SOMOS'
+    title='Nossos Serviços'
+    />   
+
+    <div class="flex flex-wrap justify-center xl:grid xl:grid-cols-3 2xl:grid 2xl:grid-cols-3 sm:p-[15px] gap-4 sm:gap-8">
+        <div onclick="window.location.href = '#corpo-clinico'" style="cursor:pointer">
+            <CardEspecialidades
+                img_background={imgClinico.src}
+                img_logo={iconClinico.src}
+                alt="Corpo Clínico"
+                title="Corpo Clínico"
+            />
+        </div>
+
+        <div onclick="window.location.href = '/Servicos#ultrassonografia'" style="cursor:pointer">
+            <CardEspecialidades
+                img_background={imgUltrassom.src}
+                img_logo={iconUltrassom.src}
+                alt="Ultrassonografia"
+                title="Ultrassonografia"
+            />
+        </div>
+
+         <CardEspecialidades
+            img_background={imgDermato.src}
+            img_logo={iconExamesLaboratorial.src}
+            alt="Exames Laboratoriais"
+            title="Exames Laboratoriais"
+        />
+
+        <CardEspecialidades
+            img_background={imgDermato.src}
+            img_logo={iconExamesGeral.src}
+            alt="Exames em Geral"
+            title="Exames em Geral"
+        />
+
+        <div onclick="window.location.href = '/Servicos#depilacao'" style="cursor:pointer">
+        <CardEspecialidades
+            img_background={imgDepilacao.src}
+            img_logo={iconDepilacao.src}
+            alt="Depilação a Laser"
+            title="Depilação a Laser"
+        />
+        </div>
+
+        <div onclick="window.location.href= '/Servicos#fisioterapia'" style="cursor:pointer">
+            <CardEspecialidades
+                img_background={imgDermato.src}
+                img_logo={iconFisio.src}
+                alt="Fisioterapia"
+                title="Fisioterapia"
+            />
+        </div>
+
+        
+    </div>
+</section>

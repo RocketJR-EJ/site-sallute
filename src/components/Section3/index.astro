@@ -1,0 +1,118 @@
+---
+import CardDoutores from "../../components/ui/Cards/CardDoutores.astro"
+import DescriptionSection from "../../components/ui/DescricaoSection/DescriptionSection.astro"
+import IconePlus from '../../assets/plus.svg'
+import diogo from "../../assets/especialistas/Diogo-Bento.png"
+import eliane from "../../assets/especialistas/Eliane-Calumby.jpg"
+import victor from "../../assets/especialistas/Victor-Hugo.png"
+import ricardo from "../../assets/especialistas/Ricardo-Macena.jpg"
+import cicero from "../../assets/especialistas/Cicero_ultrassonografista.png"
+import eduardo from "../../assets/especialistas/Eduardo_urologista.png"
+import elfrida from "../../assets/especialistas/Elfrida_neuropsi.png"
+import fabian from "../../assets/especialistas/Fabian_cardio.png"
+import irwins from "../../assets/especialistas/Irwins_urologista.png"
+import jandira from "../../assets/especialistas/Jandira_fono.png"
+import jose from "../../assets/especialistas/Jose_mastologia.png"
+import juarez from "../../assets/especialistas/Juarez_fisioterapeuta.png"
+import julia from "../../assets/especialistas/Julia_gineco.png"
+import juliana from "../../assets/especialistas/Juliana_fisio.png"
+import lilian from "../../assets/especialistas/Lilian_alergista.png"
+import ricardo_neuro from "../../assets/especialistas/Ricardo_neuro.png"
+import solange from "../../assets/especialistas/Solange_clinica.png"
+import suzane from "../../assets/especialistas/Suzane_gineco.png"
+import thaysa from "../../assets/especialistas/Thaysa_pneumologia.png"
+import ubirajara from "../../assets/especialistas/Ubirajara_ultrassonografista.png"
+import victoria from "../../assets/especialistas/Victoria_nutri.png"
+import daise from "../../assets/especialistas/Daise_Nicacio.png"
+import larissa from "../../assets/especialistas/Larissa_Tenorio.jpeg"
+
+
+const doctors = [
+  { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento", objectTop: true },
+  { img: eliane.src, title: "Endocrinologista", text: "Dra. Eliane Calumby", objectTop: true },
+  { img: victor.src, title: "Dermatologista", text: "Dr. Victor Hugo" },
+  { img: ricardo.src, title: "Nutricionista", text: "Ricardo Macena", objectTop: true},
+  { img: cicero.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida" },
+  { img: eduardo.src, title: "Urologista", text: "Dr. Eduardo Nunes" },
+  { img: elfrida.src, title: "Neuropsicóloga", text: "Dra. Elfrida Gregório" },
+  { img: fabian.src, title: "Cardiologista", text: "Dr. Fabian Touret", objectTop: true },
+  { img: irwins.src, title: "Urologista", text: "Dr. Irwins Souza" },
+  { img: jandira.src, title: "Fonoaudióloga", text: "Dra. Jandira Maia" },
+  { img: jose.src, title: "Mastologista", text: "Dr. José Venâncio", objectTop: true },
+  { img: juarez.src, title: "Fisioterapeuta", text: "Dr. Juaréz Alexandre" },
+  { img: julia.src, title: "Ginecologista", text: "Dra. Júlia Tenório" },
+  { img: juliana.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes" },
+  { img: lilian.src, title: "Alergista", text: "Dra. Lilian Maria" },
+  { img: ricardo_neuro.src, title: "Neurologista", text: "Dr. Ricardo Tenório" },
+  { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão", objectTop: true },
+  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral", objectTop: true},
+  { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque", objectTop: true },
+  { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true },
+  { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros", objectTop: true },
+  { img: daise.src, title: "Otorrinolaringologista", text: "Dra. Daise Nicacio", objectTop: true },
+  { img: larissa.src, title: "Otorrinolaringologista", text: "Dra. Larissa Tenório", objectTop: true },
+]
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" />
+
+<section id="corpo-clinico" class="w-full py-20 bg-[#F4F7FF]">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="flex justify-center items-center">
+      <DescriptionSection 
+        img={IconePlus.src}
+        label='CORPO CLÍNICO'
+        title='Conheça Nosso Corpo Clínico'
+        description='Nossa equipe de médicos especializados se dedica a fornecer atendimento personalizado em uma ampla variedade de áreas médicas.'
+      />
+    </div>
+  </div>
+  
+  <div class="mt-10 px-4">
+    <div id="doctors-slider" class="keen-slider">
+      {doctors.map((doctor) => (
+        <div class="keen-slider__slide flex justify-center">
+          <CardDoutores 
+            img={doctor.img} 
+            title={doctor.title} 
+            text={doctor.text} 
+            objectTop={doctor.objectTop} 
+            background="#F4F7FF"
+            alt={`Foto de ${doctor.text}, ${doctor.title.toLowerCase()}`} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+  
+  const slider = new KeenSlider("#doctors-slider", {
+    slides: {
+      perView: 2,
+      spacing: 10,
+    },
+    loop: true,
+    created: (s) => {
+      let timer;
+      const resetAutoplay = () => {
+        clearInterval(timer);
+        timer = setInterval(() => {
+          s.next();
+        }, 2000);
+      };
+
+      resetAutoplay();
+      s.on("dragStarted", resetAutoplay);
+    },
+    breakpoints: {
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 4,
+          spacing: 10,
+        },
+      },
+    },
+  })
+</script>

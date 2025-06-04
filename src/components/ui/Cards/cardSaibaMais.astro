@@ -1,0 +1,27 @@
+---
+interface Props {
+    title: string;
+    body: string;
+    button: string;
+}
+
+const { title, body, button} = Astro.props;
+import iconArrow from "../../../assets/icon_arrow.svg";
+---
+
+<div class="flex flex-col w-[310px] h-[278px] sm:w-[416px] sm:h-[360px] bg-gradient-to-r from-[#37B5A6] to-[#0B7164] items-center justify-center rounded-3xl shadow-[3px_5px_13px_rgba(0,0,0,0.25)] px-8 sm:px-2.5 text-white">
+    <div class="flex flex-col w-[288px] h-[168px] justify-center items-center text-center gap-4">
+        <h2 class="text-[20px] sm:text-2xl/[32px] font-medium">
+            {title}
+        </h2>
+        
+        <p class="text-[14px]/[24px] sm:text-base/[24px] font-normal">
+            {body}
+        </p>
+    </div>
+    <div class="flex items-center justify-center sm:pt-4">
+        <a href="#" class="flex items-center justify-center w-[171px] h-[44px] py-2 gap-3 border rounded-[99px] text-base font-bold cursor-pointer hover:bg-[#5da89e] duration-[0.1s]">
+             {button} <img src={iconArrow.src} alt="" class="w-2.5">
+        </a>
+    </div>
+</div>
