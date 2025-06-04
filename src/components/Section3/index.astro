@@ -95,17 +95,16 @@ const doctors = [
     },
     loop: true,
     created: (s) => {
-
-      let timer = setInterval(() => {
-        s.next()
-      }, 2000)
-
-      s.on("dragStarted", () => {
-        clearInterval(timer)
+      let timer;
+      const resetAutoplay = () => {
+        clearInterval(timer);
         timer = setInterval(() => {
-          s.next()
-        }, 2000)
-      })
+          s.next();
+        }, 2000);
+      };
+
+      resetAutoplay();
+      s.on("dragStarted", resetAutoplay);
     },
     breakpoints: {
       "(min-width: 1024px)": {
