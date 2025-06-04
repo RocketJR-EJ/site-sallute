@@ -1,6 +1,6 @@
 ---
 import CardDoutores from "../../components/ui/Cards/CardDoutores.astro"
-import DescriptionSection from '../../components/ui/DescricaoSection/DescriptionSection.astro';
+import DescriptionSection from "../../components/ui/DescricaoSection/DescriptionSection.astro"
 import IconePlus from '../../assets/plus.svg'
 import diogo from "../../assets/especialistas/Diogo-Bento.png"
 import eliane from "../../assets/especialistas/Eliane-Calumby.jpg"
@@ -26,6 +26,7 @@ import victoria from "../../assets/especialistas/Victoria_nutri.png"
 import daise from "../../assets/especialistas/Daise_Nicacio.png"
 import larissa from "../../assets/especialistas/Larissa_Tenorio.jpeg"
 
+
 const doctors = [
   { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento", objectTop: true },
   { img: eliane.src, title: "Endocrinologista", text: "Dra. Eliane Calumby", objectTop: true },
@@ -44,14 +45,15 @@ const doctors = [
   { img: lilian.src, title: "Alergista", text: "Dra. Lilian Maria" },
   { img: ricardo_neuro.src, title: "Neurologista", text: "Dr. Ricardo Tenório" },
   { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão", objectTop: true },
-  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral", },
+  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral", objectTop: true},
   { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque", objectTop: true },
   { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true },
   { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros", objectTop: true },
-  { img: daise.src, title: "Otorrino", text: "Dra. Daise Nicacio", objectTop: true },
-    { img: larissa.src, title: "Otorrinolaringologista", text: "Dra. Larissa Tenório", objectTop: true },
+  { img: daise.src, title: "Otorrinolaringologista", text: "Dra. Daise Nicacio", objectTop: true },
+  { img: larissa.src, title: "Otorrinolaringologista", text: "Dra. Larissa Tenório", objectTop: true },
 ]
 ---
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
@@ -73,8 +75,14 @@ const doctors = [
     <div class="swiper">
       <div class="swiper-wrapper px-10 lg:px-15">
         {doctors.map((doctor) => (
-          <div class="swiper-slide flex justify-center ">
-            <CardDoutores img={doctor.img} title={doctor.title} text={doctor.text} objectTop={doctor.objectTop} background="#F4F7FF" />
+          <div class="swiper-slide flex justify-center">
+            <CardDoutores 
+              img={doctor.img} 
+              title={doctor.title} 
+              text={doctor.text} 
+              objectTop={doctor.objectTop} 
+              background="#F4F7FF"
+              alt={`Foto de ${doctor.text}, ${doctor.title.toLowerCase()}`} />
           </div>
         ))}
       </div>
