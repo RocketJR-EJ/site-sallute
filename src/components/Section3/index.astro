@@ -54,57 +54,65 @@ const doctors = [
 ]
 ---
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" />
 
 <section id="corpo-clinico" class="w-full py-20 bg-[#F4F7FF]">
-
   <div class="container mx-auto px-4 max-w-5xl">
     <div class="flex justify-center items-center">
-      
-        <DescriptionSection 
-          img={IconePlus.src}
-          label='CORPO CLÍNICO'
-          title='Conheça Nosso Corpo Clínico'
-          description='Nossa equipe de médicos especializados se dedica a fornecer atendimento personalizado em uma ampla variedade de áreas médicas.'
-        />
-
+      <DescriptionSection 
+        img={IconePlus.src}
+        label='CORPO CLÍNICO'
+        title='Conheça Nosso Corpo Clínico'
+        description='Nossa equipe de médicos especializados se dedica a fornecer atendimento personalizado em uma ampla variedade de áreas médicas.'
+      />
     </div>
   </div>
-  <div class="mt-10">
-    <div class="swiper">
-      <div class="swiper-wrapper px-10 lg:px-15">
-        {doctors.map((doctor) => (
-          <div class="swiper-slide flex justify-center">
-            <CardDoutores 
-              img={doctor.img} 
-              title={doctor.title} 
-              text={doctor.text} 
-              objectTop={doctor.objectTop} 
-              background="#F4F7FF"
-              alt={`Foto de ${doctor.text}, ${doctor.title.toLowerCase()}`} />
-          </div>
-        ))}
-      </div>
+  
+  <div class="mt-10 px-4">
+    <div id="doctors-slider" class="keen-slider">
+      {doctors.map((doctor) => (
+        <div class="keen-slider__slide flex justify-center">
+          <CardDoutores 
+            img={doctor.img} 
+            title={doctor.title} 
+            text={doctor.text} 
+            objectTop={doctor.objectTop} 
+            background="#F4F7FF"
+            alt={`Foto de ${doctor.text}, ${doctor.title.toLowerCase()}`} />
+        </div>
+      ))}
     </div>
   </div>
 </section>
 
 <script type="module" is:inline>
-  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
-  new Swiper('.swiper', {
-    slidesPerView: 2,
-    centeredSlides: false,
-    spaceBetween: 10,
-    loop: false,
-    autoplay: {
-      delay: 2000, 
-      disableOnInteraction: false
+  import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+  
+  const slider = new KeenSlider("#doctors-slider", {
+    slides: {
+      perView: 2,
+      spacing: 10,
+    },
+    loop: true,
+    created: (s) => {
+      let timer;
+      const resetAutoplay = () => {
+        clearInterval(timer);
+        timer = setInterval(() => {
+          s.next();
+        }, 2000);
+      };
+
+      resetAutoplay();
+      s.on("dragStarted", resetAutoplay);
     },
     breakpoints: {
-      1024: {
-        slidesPerView: 4,
-      }
-    }
-  });
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 4,
+          spacing: 10,
+        },
+      },
+    },
+  })
 </script>
