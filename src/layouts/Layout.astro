@@ -1,28 +1,208 @@
 ---
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  image?: string;
+  currentPath?: string;
+}
+
+const { 
+  title = "Clínica Sallute - Atendimento médico especializado em Penedo/AL",
+  description = "A Clínica Sallute oferece atendimento médico completo com médicos especialistas, fisioterapia, ultrassonografia, exames laboratoriais e diversos outros serviços de saúde em Penedo/AL.",
+  canonicalURL = Astro.url.href,
+  image = "/social-image.jpg",
+  currentPath = Astro.url.pathname
+} = Astro.props;
+
 import "../styles/global.css";
 ---
 
 <!doctype html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/sallutelogo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Clínica Sallute</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="format-detection" content="telephone=+5582999689119" />
+    <meta name="theme-color" content="#0B7164" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="msapplication-TileColor" content="#0B7164" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Clínica Sallute" />
+    
+    <!-- Enhanced Keywords -->
+    <meta name="keywords" content="clínica médica, Penedo, Alagoas, consultas médicas, exames laboratoriais, fisioterapia, ultrassonografia, cardiologia, neurologia, ginecologia, otorrinolaringologia, urologia, mastologia, alergologia, pneumologia, nutrição, fonoaudiologia, psiquiatria, endocrinologia, neuropsicologia, depilação a laser, atendimento humanizado, exames em geral" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/sallutelogo.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- SEO Tags -->
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:site_name" content="Clínica Sallute" />
+    <meta property="og:locale" content="pt_BR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={Astro.url.href} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="Clínica Sallute" />
+    <meta name="geo.region" content="BR-AL" />
+    <meta name="geo.placename" content="Penedo" />
+    
+    <!-- Schema.org markup for medical clinic -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "Clínica Sallute",
+        "image": "/sallutelogo.svg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Eng. Joaquim Gonçalves, nº 200, Santa Luzia",
+          "addressLocality": "Penedo",
+          "addressRegion": "AL",
+          "postalCode": "",
+          "addressCountry": "BR"
+        },
+        "telephone": "+5582999689119",
+        "email": "salluteclinica@outlook.com",
+        "openingHours": "Mo-Sa 07:30-18:00",
+        "url": "https://clinicasallute.com.br",
+        "priceRange": "$$",
+        "sameAs": [
+          "https://www.instagram.com/sallute.clinica/",
+          "https://www.facebook.com/sallute.penedo/"
+        ],
+        "slogan": "Sua parceira de confiança em saúde",
+        "areaServed": {
+          "@type": "City",
+          "name": "Penedo",
+          "state": "Alagoas"
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Acessibilidade",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Estacionamento",
+            "value": true
+          }
+        ],
+        "medicalSpecialty": [
+          "Fisioterapia",
+          "Ultrassonografia",
+          "Clínica Geral",
+          "Dermatologia",
+          "Cardiologia",
+          "Neurologia",
+          "Ginecologia",
+          "Otorrinolaringologia",
+          "Urologia",
+          "Mastologia",
+          "Alergologia",
+          "Pneumologia",
+          "Nutrição",
+          "Fonoaudiologia",
+          "Psiquiatria",
+          "Endocrinologia",
+          "Neuropsicologia"
+        ],
+        "availableService": [
+          "Ultrassonografia",
+          "Fisioterapia",
+          "Exames Laboratoriais",
+          "Exames em Geral",
+          "Depilação a Laser"
+        ]
+      }
+    </script>
+
+    <!-- Breadcrumbs Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://clinicasallute.com.br"
+          }
+          ${currentPath !== "/" ? `:{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "${currentPath.substring(1)}",
+            "item": "https://clinicasallute.com.br${currentPath}"
+          }` : ""}
+        ]
+      }
+    </script>
+
+    <!-- Resource Hints -->
+    <link rel="preload" as="image" href="/sallutelogo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Performance Optimizations -->
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- PWA Tags -->
+    <meta name="application-name" content="Clínica Sallute" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <!-- Content Language -->
+    <link rel="alternate" href="https://clinicasallute.com.br" hreflang="pt-BR" />
+    <meta http-equiv="content-language" content="pt-BR" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100%;
-		overflow-x: hidden;
-	}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
 </style>
