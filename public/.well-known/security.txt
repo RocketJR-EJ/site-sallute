@@ -1,0 +1,6 @@
+# Política de Segurança
+Contact: mailto:salluteclinica@outlook.com
+Expires: 2026-06-05T00:00:00.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://clinicasallute.com.br/.well-known/security.txt
+Policy: https://clinicasallute.com.br/PoliticaPrivacidade
