@@ -1,0 +1,54 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+const { src, alt, className } = Astro.props;
+const dialogId = `modal-${alt.replace(/\s+/g, '-')}`;
+---
+
+<div class="relative">
+  <button 
+    onclick={`document.getElementById('${dialogId}').showModal()`}
+    class="w-full h-full cursor-pointer hover:opacity-90 transition-opacity"
+  >
+    <img
+      src={src}
+      alt={alt}
+      class={className}
+    />
+  </button>
+
+  <dialog 
+    id={dialogId}
+    class="backdrop:bg-black/50 p-0 rounded-lg max-w-[90vw] w-auto max-h-[90vh] m-auto"
+  >
+    <div class="relative">
+      <img 
+        src={src} 
+        alt={alt}
+        class="w-full h-auto object-contain max-h-[85vh]"
+      />
+      <button 
+        onclick={`document.getElementById('${dialogId}').close()`}
+        class="absolute top-2 right-2 bg-white rounded-full p-2 hover:bg-gray-100 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+
+<style>
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  dialog {
+    border: none;
+  }
+</style>

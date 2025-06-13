@@ -11,15 +11,51 @@ export interface Props {
 const { img, title, text, conselho, objectTop, background = '#fff', alt } = Astro.props
 ---
 
-<article
-  class="rounded-lg overflow-hidden w-72 flex flex-col items-center p-4"
->
-  <img
-    src={img}
-    alt={alt ? alt : `Foto de ${text}, ${title.toLowerCase()}`}
-    class={`w-32 lg:w-55 h-32 lg:h-55 rounded-full object-cover ${objectTop ? 'object-top' : ''}`}
-/>
-  <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-2 lg:pt-4">{title}</h2>
-  <p class="text-base font-bold text-gray-600 text-center">{text}</p>
-  <p class="text-base font-bold text-gray-600 text-center">{conselho}</p> 
-</article>
+<div class="relative">
+  <article class="rounded-lg overflow-hidden w-72 flex flex-col items-center p-4">
+    <button 
+      onclick={`document.getElementById('modal-${text.replace(/\s+/g, '-')}').showModal()`}
+      class="cursor-pointer hover:opacity-90 transition-opacity"
+    >
+      <img
+        src={img}
+        alt={alt ? alt : `Foto de ${text}, ${title.toLowerCase()}`}
+        class={`w-32 lg:w-55 h-32 lg:h-55 rounded-full object-cover ${objectTop ? 'object-top' : ''}`}
+      />
+    </button>
+    <h2 class="text-lg font-bold text-gray-800 mb-2 text-center pt-2 lg:pt-4">{title}</h2>
+    <p class="text-base font-bold text-gray-600 text-center">{text}</p>
+    <p class="text-base font-bold text-gray-600 text-center">{conselho}</p> 
+  </article>
+
+  <dialog 
+    id={`modal-${text.replace(/\s+/g, '-')}`} 
+    class="backdrop:bg-black/50 p-0 rounded-lg max-w-2xl w-full max-h-[90vh] m-auto"
+  >
+    <div class="relative">
+      <img 
+        src={img} 
+        alt={alt ? alt : `Foto de ${text}, ${title.toLowerCase()}`}
+        class="w-full h-auto"
+      />
+      <button 
+        onclick={`document.getElementById('modal-${text.replace(/\s+/g, '-')}').close()`}
+        class="absolute top-2 right-2 bg-white rounded-full p-2 hover:bg-gray-100 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+
+<style>
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  dialog {
+    border: none;
+  }
+</style>
