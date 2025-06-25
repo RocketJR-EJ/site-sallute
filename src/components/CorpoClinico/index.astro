@@ -28,33 +28,33 @@ import larissa from "../../assets/especialistas/Larissa_Tenorio.jpeg"
 
 
 const doctors = [
-  { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento", objectTop: true },
-  { img: eliane.src, title: "Endocrinologista", text: "Dra. Eliane Calumby", objectTop: true },
-  { img: victor.src, title: "Dermatologista", text: "Dr. Victor Hugo" },
-  { img: ricardo.src, title: "Nutricionista", text: "Ricardo Macena", objectTop: true},
-  { img: cicero.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida" },
-  { img: eduardo.src, title: "Urologista", text: "Dr. Eduardo Nunes" },
-  { img: elfrida.src, title: "Neuropsicóloga", text: "Dra. Elfrida Gregório" },
-  { img: fabian.src, title: "Cardiologista", text: "Dr. Fabian Touret", objectTop: true },
-  { img: irwins.src, title: "Urologista", text: "Dr. Irwins Souza" },
-  { img: jandira.src, title: "Fonoaudióloga", text: "Dra. Jandira Maia" },
-  { img: jose.src, title: "Mastologista", text: "Dr. José Venâncio", objectTop: true },
-  { img: juarez.src, title: "Fisioterapeuta", text: "Dr. Juaréz Alexandre" },
-  { img: julia.src, title: "Ginecologista", text: "Dra. Júlia Tenório" },
-  { img: juliana.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes" },
-  { img: lilian.src, title: "Alergista", text: "Dra. Lilian Maria" },
-  { img: ricardo_neuro.src, title: "Neurologista", text: "Dr. Ricardo Tenório" },
-  { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão", objectTop: true },
-  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzane Cabral", objectTop: true},
-  { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque", objectTop: true },
-  { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true },
-  { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros", objectTop: true },
-  { img: daise.src, title: "Otorrinolaringologista", text: "Dra. Daise Nicacio", objectTop: true },
-  { img: larissa.src, title: "Otorrinolaringologista", text: "Dra. Larissa Tenório", objectTop: true },
+  { img: diogo.src, title: "Psiquiatra", text: "Dr. Diogo Bento", objectTop: true, conselho: "CRM: 8030-AL"},
+  { img: eliane.src, title: "Endocrinologista", text: "Dra. Eline Calumby", objectTop: true, conselho: "CRM: 8030-AL"},
+  { img: victor.src, title: "Dermatologista", text: "Dr. Victor Hugo", conselho: "CRM: 7556-AL" },
+  { img: ricardo.src, title: "Nutricionista", text: "Ricardo Macena", objectTop: true, conselho: "CRN5: 16743"},
+  { img: cicero.src, title: "Ultrassonografista", text: "Dr. Cícero Almeida", conselho: "CRM: 7362 AL" },
+  { img: eduardo.src, title: "Urologista", text: "Dr. Eduardo Nunes", conselho: "CRM: 4159-AL" },
+  { img: elfrida.src, title: "Neuropsicóloga", text: "Dra. Elfrida Lins", conselho: "CRP: 15/5739" },
+  { img: fabian.src, title: "Cardiologista", text: "Dr. Fabian Touret", objectTop: true, conselho: "CRM: 6897-AL" },
+  { img: irwins.src, title: "Urologista", text: "Dr. Irwins Souza", conselho: "CRM: 7694" },
+  { img: jandira.src, title: "Fonoaudióloga", text: "Dra. Jandira Maia", conselho: "CRFA: 4-13960" },
+  { img: jose.src, title: "Mastologista", text: "Dr. José Venâncio", objectTop: true, conselho: "CRM: 7097-AL" },
+  { img: juarez.src, title: "Fisioterapeuta", text: "Dr. Juaréz Alexandre", conselho: "CREFITO: 283695-F" },
+  { img: julia.src, title: "Ginecologista", text: "Dra. Júlia Tenório", conselho: "CRM 8845-AL" },
+  { img: juliana.src, title: "Fisioterapeuta", text: "Dra. Juliana Gomes", conselho: "CREFITO: 351313-F" },
+  { img: lilian.src, title: "Alergista", text: "Dra. Lilian Maria", conselho: "CRM: 6875-AL" },
+  { img: ricardo_neuro.src, title: "Neurologista", text: "Dr. Ricardo Tenório", conselho: "CRM: 2580-AL" },
+  { img: solange.src, title: "Clínica Geral", text: "Dra. Solange Beltrão", objectTop: true, conselho: "CRM: 3948-AL" },
+  { img: suzane.src, title:"Ginecologista", text:"Dra. Suzana Cabral", objectTop: true, conselho: "CRM: 5168-AL"},
+  { img: thaysa.src, title: "Pneumologista", text: "Dra. Thaysa Alburquerque", objectTop: true, conselho: "CRM: 6867-AL" },
+  { img: ubirajara.src, title: "Ultrassonografista", text: "Dr. Ubirajara Matos", objectTop: true, conselho: "CRM: 7362-AL" },
+  { img: victoria.src, title: "Nutricionista", text: "Dra. Victoria Medeiros", objectTop: true, conselho: "CRN6: 23393-AL" },
+  { img: daise.src, title: "Otorrinolaringologista", text: "Dra. Daise Nicacio", objectTop: true, conselho: "CRM: 6167-AL" },
+  { img: larissa.src, title: "Otorrinolaringologista", text: "Dra. Larissa Tenório", objectTop: true, conselho: "CRM: 7462-AL" },
 ]
 ---
 
-<section class="flex flex-col items-center justify-center py-10 mb-10 bg-[#F4F7FF]">
+<section class="flex flex-col items-center justify-center py-10 mb-10 bg-[#FFFFFF]">
     
     <DescriptionSection 
         img={IconePlus.src}
@@ -69,7 +69,8 @@ const doctors = [
             <CardDoutores 
               img={doctor.img} 
               title={doctor.title} 
-              text={doctor.text} 
+              text={doctor.text}
+              conselho={doctor.conselho} 
               objectTop={doctor.objectTop}
               alt={`Foto de ${doctor.text}, ${doctor.title.toLowerCase()}`}
             />

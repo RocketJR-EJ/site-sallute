@@ -16,7 +16,3 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /.git/
-
-# Headers
-Host: https://clinicasallute.com.br
-Cache-control: max-age=3600
