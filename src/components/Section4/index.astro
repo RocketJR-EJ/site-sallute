@@ -1,11 +1,11 @@
 ---
 import Button from '../../components/ui/Button/Button.astro';
 import DescriptionSection from '../../components/ui/DescricaoSection/DescriptionSection.astro';
-import IconePlus from '../../assets/plus.svg'
-import Recepcao from '../../assets/ImgsClinica/recepcao.svg';
+import IconePlus from '../../assets/icons/plus.svg'
+import Recepcao from '../../assets/ImgsClinica/recepcaoEsquerdo.svg';
 import Sala from '../../assets/ImgsClinica/sala.svg';
-import Corredor1 from '../../assets/ImgsClinica/corredor1.svg';
-import Corredor2 from '../../assets/ImgsClinica/corredor2.svg';
+import CorredorFrente from '../../assets/ImgsClinica/corredorFrente.svg';
+import CorredorFundo from '../../assets/ImgsClinica/corredorFundo.svg';
 ---
 
 <section class="flex flex-col items-center justify-center py-10 sm:py-16 gap-12 sm:gap-16">
@@ -44,9 +44,9 @@ import Corredor2 from '../../assets/ImgsClinica/corredor2.svg';
 
         <div class="flex flex-row lg:flex-col w-full lg:w-1/4 lg:h-full items-center justify-center gap-4 lg:gap-3 px-3 sm:px-6 lg:px-0">
             
-            <img src={Corredor1.src} alt="Imagem Corredor"   class="rounded-xs lg:rounded-xl w-1/3 lg:w-full h-full lg:h-1/3 object-cover" />
+            <img src={CorredorFrente.src} alt="Imagem Corredor"   class="rounded-xs lg:rounded-xl w-1/3 lg:w-full h-full lg:h-1/3 object-cover" />
             <img src={Sala.src} alt="Imagem Sala de coletas" class="rounded-xs lg:rounded-xl w-1/3 lg:w-full h-full lg:h-1/3 object-cover" />
-            <img src={Corredor2.src} alt="Imagem Corredor"   class="rounded-xs lg:rounded-xl w-1/3 lg:w-full h-full lg:h-1/3 object-cover" />
+            <img src={CorredorFundo.src} alt="Imagem Corredor"   class="rounded-xs lg:rounded-xl w-1/3 lg:w-full h-full lg:h-1/3 object-cover" />
         
         </div>
     

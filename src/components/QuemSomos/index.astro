@@ -1,13 +1,13 @@
 ---
 import Section1 from '../../components/Section1/index.astro'
 import DescriptionSection from '../../components/ui/DescricaoSection/DescriptionSection.astro';
-import IconePlus from '../../assets/plus.svg'
-import Corredor1 from '../../assets/ImgsClinica/corredor1.svg';
-import Corredor2 from '../../assets/ImgsClinica/corredor2.svg';
+import IconePlus from '../../assets/icons/plus.svg'
+import CorredorFrente from '../../assets/ImgsClinica/corredorFrente.svg';
+import CorredorFundo from '../../assets/ImgsClinica/corredorFundo.svg';
 import Sala from '../../assets/ImgsClinica/sala.svg';
 import Fachada from '../../assets/ImgsClinica/fachada.svg';
-import Recepcao1 from '../../assets/ImgsClinica/recepcao1.svg';
-import Recepcao2 from '../../assets/ImgsClinica/recepcao2.jpg';
+import Recepcao1 from '../../assets/ImgsClinica/recepcaoEsquerdo.svg';
+import Recepcao2 from '../../assets/ImgsClinica/recepcaoDireito.jpg';
 
 const historia = [
   "A Clínica Sallute nasceu em março de 2016 com um sonho simples, mas poderoso: cuidar de pessoas. Começamos com um único serviço, a fisioterapia, e desde o início já carregávamos conosco o compromisso de oferecer um atendimento humano, acolhedor e de excelência.",
@@ -83,8 +83,8 @@ const valores = [
   </div>
   <div class="flex flex-col lg:flex-row items-center justify-center gap-3 px-3 w-full mt-5 sm:mt-6 md:mt-7 lg:mt-6">
     <div class="flex flex-row lg:flex-col w-full lg:w-1/2 lg:h-full items-center justify-center gap-4 lg:gap-3 px-3">
-      <img src={Corredor1.src} alt="Imagem do Interior da Clínica"   class="rounded-xl w-1/2 lg:w-full h-full lg:h-1/2 object-cover" />
-      <img src={Corredor2.src} alt="Imagem do Interior da Clínica" class="rounded-xl w-1/2 lg:w-full h-full lg:h-1/2 object-cover" />
+      <img src={CorredorFrente.src} alt="Imagem do Interior da Clínica"   class="rounded-xl w-1/2 lg:w-full h-full lg:h-1/2 object-cover" />
+      <img src={CorredorFundo.src} alt="Imagem do Interior da Clínica" class="rounded-xl w-1/2 lg:w-full h-full lg:h-1/2 object-cover" />
     </div>
     <div class="relative w-full lg:w-4/4">
       <img src={Sala.src} alt="Sala de Coletas da Clínica" class="rounded-2xl w-full h-auto object-cover" />
